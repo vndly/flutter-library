@@ -1,0 +1,10 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 4,
+    "editor.fontSize": 16,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "'Source Code Pro Medium', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "files.autoSave": "afterDelay",
+    "dart.previewFlutterUiGuides": true
+}
