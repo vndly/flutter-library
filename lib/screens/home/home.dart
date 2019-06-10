@@ -4,15 +4,15 @@ import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
-    HomeItem('Item 1'),
-    HomeItem('Item 2'),
-    HomeItem('Item 3')
+    HomeItem('Item 1', (context) => Item1Screen()),
+    HomeItem('Item 2', (context) => Item1Screen()),
+    HomeItem('Item 3', (context) => Item1Screen())
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Item1Screen()),
+      MaterialPageRoute(builder: item.builder),
     );
   }
 
