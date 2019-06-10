@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/screens/item1/item1.dart';
+import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<String> items;
-  HomeScreen(this.items);
+  final List<HomeItem> items = [
+    HomeItem('Item 1', Item1Screen()),
+    HomeItem('Item 2', Item1Screen()),
+    HomeItem('Item 3', Item1Screen())
+  ];
 
-  void _onItemSelected(BuildContext context, String item) {
-    Scaffold.of(context).showSnackBar(new SnackBar(
-      content: new Text(item),
-    ));
+  void _onItemSelected(BuildContext context, HomeItem item) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Item1Screen()),
+    );
   }
 
   Widget _buildHomeItem(BuildContext context, int index) {
@@ -15,7 +21,7 @@ class HomeScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(
-          items[index],
+          items[index].name,
           style: TextStyle(color: Colors.black),
         ),
       ),
