@@ -4,9 +4,9 @@ import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
-    HomeItem('Item 1', Item1Screen()),
-    HomeItem('Item 2', Item1Screen()),
-    HomeItem('Item 3', Item1Screen())
+    HomeItem('Item 1'),
+    HomeItem('Item 2'),
+    HomeItem('Item 3')
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
