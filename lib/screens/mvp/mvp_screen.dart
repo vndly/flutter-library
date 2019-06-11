@@ -11,20 +11,20 @@ class MvpScreen extends StatefulWidget {
 }
 
 class MvpState<MvpModel, MvpScreen> extends BaseEvent {
-  MvpState(state) : super(state);
+  MvpState(model) : super(model);
 
-  void onIncrementCounter() => update(state.increment);
+  void onIncrementCounter() => update(_model.increment);
 
   @override
-  Widget build(BuildContext context) => MvpView(this, state);
+  Widget build(BuildContext context) => MvpView(this, _model);
 }
 
 abstract class BaseEvent<S, W extends StatefulWidget> extends State<W> {
-  S state;
+  S _model;
 
-  BaseEvent(this.state);
+  BaseEvent(this._model);
 
-  void update(Function function) => setState(() => state = function());
+  void update(Function function) => setState(() => _model = function());
 }
 
 @immutable
