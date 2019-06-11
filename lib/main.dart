@@ -17,7 +17,16 @@ class MyApp extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      home: HomeScreen(),
+      home: Stack(
+        fit: StackFit.expand,
+        children: [
+          HomeScreen(),
+          Banner(
+            message: 'Custom',
+            location: BannerLocation.topEnd,
+          ),
+        ],
+      ),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
