@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/mvp/mvp_screen.dart';
+import 'package:flutter_library/screens/toast/toast_screen.dart';
 import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
     HomeItem('MVP', (context) => MvpScreen()),
     HomeItem('Dialog', (context) => DialogScreen()),
-    HomeItem('Item 3', (context) => MvpScreen())
+    HomeItem('Toast', (context) => ToastScreen())
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
