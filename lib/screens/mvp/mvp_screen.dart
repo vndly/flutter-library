@@ -5,22 +5,31 @@ class MvpScreen extends StatefulWidget {
   final String title = 'MVP';
 
   @override
-  MvpState createState() => MvpState();
+  MvpEvent createState() => MvpEvent();
 }
 
-class MvpState extends State<MvpScreen> {
-  int _counter = 0;
+class MvpEvent extends State<MvpScreen> {
+  MvpState state = MvpState(0);
 
-  void incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void onIncrementCounter() {
+    setState(() => state = state.increment());
   }
-
-  int counter() => _counter;
 
   @override
   Widget build(BuildContext context) {
-    return MvpView(widget, this);
+    return MvpView(widget, this, state);
+  }
+}
+
+@immutable
+class MvpState {
+  final int _counter;
+
+  MvpState(this._counter);
+
+  int counter() => _counter;
+
+  MvpState increment() {
+    return MvpState(_counter + 1);
   }
 }
