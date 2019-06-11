@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        buttonTheme: const ButtonThemeData(
+          textTheme: ButtonTextTheme.primary,
+        ),
       ),
       home: HomeScreen(),
       localizationsDelegates: [
