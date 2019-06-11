@@ -10,7 +10,7 @@ class MvpScreen extends StatefulWidget {
   MvpState createState() => MvpState(MvpModel(this.title, 0));
 }
 
-class MvpState<MvpModel, MvpScreen> extends BaseEvent {
+class MvpState<MvpModel> extends BaseEvent {
   MvpState(model) : super(model);
 
   void onIncrementCounter() => update(_model.increment);
