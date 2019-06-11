@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/screens/item1/item1.dart';
+import 'package:flutter_library/screens/mvp/mvp_screen.dart';
 import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
-    HomeItem('Item 1', (context) => Item1Screen()),
-    HomeItem('Item 2', (context) => Item1Screen()),
-    HomeItem('Item 3', (context) => Item1Screen())
+    HomeItem('MVP', (context) => MvpScreen()),
+    HomeItem('Item 2', (context) => MvpScreen()),
+    HomeItem('Item 3', (context) => MvpScreen())
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
