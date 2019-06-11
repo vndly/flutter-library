@@ -7,7 +7,7 @@ class MvpScreen extends StatefulWidget {
   MvpScreen(this.title);
 
   @override
-  MvpState createState() => MvpState(MvpModel(0));
+  MvpState createState() => MvpState(MvpModel(this.title, 0));
 }
 
 class MvpState<MvpModel, MvpScreen> extends BaseEvent {
@@ -16,7 +16,7 @@ class MvpState<MvpModel, MvpScreen> extends BaseEvent {
   void onIncrementCounter() => update(state.increment);
 
   @override
-  Widget build(BuildContext context) => MvpView(widget, this, state);
+  Widget build(BuildContext context) => MvpView(this, state);
 }
 
 abstract class BaseEvent<S, W extends StatefulWidget> extends State<W> {
@@ -29,11 +29,10 @@ abstract class BaseEvent<S, W extends StatefulWidget> extends State<W> {
 
 @immutable
 class MvpModel {
-  final int _counter;
+  final String title;
+  final int counter;
 
-  MvpModel(this._counter);
+  MvpModel(this.title, this.counter);
 
-  int counter() => _counter;
-
-  MvpModel increment() => MvpModel(_counter + 1);
+  MvpModel increment() => MvpModel(title, counter + 1);
 }
