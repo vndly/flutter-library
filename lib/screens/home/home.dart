@@ -35,7 +35,8 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Items'),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
+        separatorBuilder: (context, index) => Divider(),
         itemBuilder: _buildHomeItem,
         itemCount: items.length,
       ),

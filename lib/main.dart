@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'screens/home/home.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
