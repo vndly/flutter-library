@@ -16,9 +16,7 @@ class MvpEvent extends State<MvpScreen> {
   void update(Function function) => setState(() => state = function());
 
   @override
-  Widget build(BuildContext context) {
-    return MvpView(widget, this, state);
-  }
+  Widget build(BuildContext context) => MvpView(widget, this, state);
 }
 
 @immutable
@@ -29,7 +27,5 @@ class MvpState {
 
   int counter() => _counter;
 
-  MvpState increment() {
-    return MvpState(_counter + 1);
-  }
+  MvpState increment() => MvpState(_counter + 1);
 }
