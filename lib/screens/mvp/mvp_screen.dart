@@ -2,30 +2,38 @@ import 'package:flutter/material.dart';
 import 'mvp_view.dart';
 
 class MvpScreen extends StatefulWidget {
-  final String title = 'MVP';
+  final String title;
+
+  MvpScreen(this.title);
 
   @override
-  MvpEvent createState() => MvpEvent();
+  MvpState createState() => MvpState(MvpModel(0));
 }
 
-class MvpEvent extends State<MvpScreen> {
-  MvpState state = MvpState(0);
+class MvpState<MvpModel, MvpScreen> extends BaseEvent {
+  MvpState(state) : super(state);
 
   void onIncrementCounter() => update(state.increment);
-
-  void update(Function function) => setState(() => state = function());
 
   @override
   Widget build(BuildContext context) => MvpView(widget, this, state);
 }
 
+abstract class BaseEvent<S, W extends StatefulWidget> extends State<W> {
+  S state;
+
+  BaseEvent(this.state);
+
+  void update(Function function) => setState(() => state = function());
+}
+
 @immutable
-class MvpState {
+class MvpModel {
   final int _counter;
 
-  MvpState(this._counter);
+  MvpModel(this._counter);
 
   int counter() => _counter;
 
-  MvpState increment() => MvpState(_counter + 1);
+  MvpModel increment() => MvpModel(_counter + 1);
 }

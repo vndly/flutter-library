@@ -6,7 +6,7 @@ import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
-    HomeItem('MVP', (context) => MvpScreen()),
+    HomeItem('MVP', (context) => MvpScreen('MVP')),
     HomeItem('Dialog', (context) => DialogScreen()),
     HomeItem('Toast', (context) => ToastScreen())
   ];
