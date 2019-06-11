@@ -11,9 +11,9 @@ class MvpScreen extends StatefulWidget {
 class MvpEvent extends State<MvpScreen> {
   MvpState state = MvpState(0);
 
-  void onIncrementCounter() {
-    setState(() => state = state.increment());
-  }
+  void onIncrementCounter() => update(state.increment);
+
+  void update(Function function) => setState(() => state = function());
 
   @override
   Widget build(BuildContext context) {
