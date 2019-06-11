@@ -19,7 +19,7 @@ class MvpState<MvpModel, MvpScreen> extends BaseEvent {
   Widget build(BuildContext context) => MvpView(this, _model);
 }
 
-abstract class BaseEvent<S, W extends StatefulWidget> extends State<W> {
+abstract class BaseEvent<S> extends State {
   S _model;
 
   BaseEvent(this._model);
