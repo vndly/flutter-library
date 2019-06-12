@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/utils/nav.dart';
-
 import 'navigation_screen_params.dart';
 import 'navigation_screen_replaced.dart';
 
@@ -23,8 +21,9 @@ class NavigationScreen extends StatelessWidget {
               child: Text('Open with params'),
             ),
             RaisedButton(
-              onPressed: () =>
-                  Nav.pushReplace(context, NavigationScreenReplaced()),
+              onPressed: () => Navigator.of(context).pushReplacement(
+                    NavigationScreenReplaced.instance(context),
+                  ),
               child: Text('Open replacing'),
             ),
           ],

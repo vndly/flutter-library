@@ -12,7 +12,7 @@ class TabsUpScreen extends StatelessWidget {
             tabs: [
               Tab(
                 text: 'Tab 1',
-                icon: Icon(Icons.create_new_folder),
+                icon: Icon(Icons.add_a_photo),
               ),
               Tab(
                 text: 'Tab 2',
