@@ -6,6 +6,10 @@ class NavigationScreenParams extends StatelessWidget {
 
   NavigationScreenParams(this.value);
 
+  static Future<T> instance<T>(BuildContext context, String value) {
+    return Nav.push(context, NavigationScreenParams(value));
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

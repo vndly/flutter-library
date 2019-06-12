@@ -17,7 +17,7 @@ class NavigationScreen extends StatelessWidget {
             RaisedButton(
               onPressed: () async {
                 String value =
-                    await Nav.push(context, NavigationScreenParams('Hello!'));
+                    await NavigationScreenParams.instance(context, 'Hello!');
                 print(value);
               },
               child: Text('Open with params'),
