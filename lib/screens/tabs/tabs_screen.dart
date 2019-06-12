@@ -14,7 +14,7 @@ class TabsScreen extends StatelessWidget {
             RaisedButton(
               onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => new TabsUpScreen(),
+                      builder: (context) => TabsUpScreen(),
                     ),
                   ),
               child: Text('Up'),
@@ -22,7 +22,7 @@ class TabsScreen extends StatelessWidget {
             RaisedButton(
               onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => new TabsUpScreen(),
+                      builder: (context) => TabsUpScreen(),
                     ),
                   ),
               child: Text('Down'),

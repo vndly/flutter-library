@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/utils/nav.dart';
 
 class NavigationScreenParams extends StatelessWidget {
   final String value;
@@ -9,7 +10,7 @@ class NavigationScreenParams extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        Navigator.of(context).pop('Canceled');
+        Nav.pop(context, 'Canceled');
         return Future.value(false);
       },
       child: Scaffold(
@@ -18,7 +19,7 @@ class NavigationScreenParams extends StatelessWidget {
         ),
         body: Center(
           child: RaisedButton(
-            onPressed: () => Navigator.of(context).pop('Bye!'),
+            onPressed: () => Nav.pop(context, 'Bye!'),
             child: Text('Go back'),
           ),
         ),

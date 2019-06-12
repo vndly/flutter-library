@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/utils/nav.dart';
 
 class NavigationScreenReplaced extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class NavigationScreenReplaced extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Nav.pop(context),
           child: Text('Go back'),
         ),
       ),
