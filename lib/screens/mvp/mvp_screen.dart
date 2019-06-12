@@ -7,24 +7,26 @@ class MvpScreen extends StatefulWidget {
   MvpScreen(this.title);
 
   @override
-  MvpState createState() => MvpState(MvpModel(this.title, 0));
+  MvpEvents createState() => MvpEvents(MvpModel(this.title, 0));
 }
 
-class MvpState<MvpModel> extends BaseEvent {
-  MvpState(model) : super(model);
+class MvpEvents extends State {
+  MvpModel _model;
 
-  void onIncrementCounter() => update(_model.increment);
+  MvpEvents(this._model);
+
+  void onIncrementCounter() => setState(() => _model = _model.increment());
 
   @override
-  Widget build(BuildContext context) => MvpView(this, _model);
+  Widget build(BuildContext context) => MvpView(MvpState(this, _model));
 }
 
-abstract class BaseEvent<S> extends State {
-  S _model;
+class MvpState
+{
+  MvpEvents event;
+  MvpModel model;
 
-  BaseEvent(this._model);
-
-  void update(Function function) => setState(() => _model = function());
+  MvpState(this.event, this.model);
 }
 
 @immutable

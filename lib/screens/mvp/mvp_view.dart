@@ -4,24 +4,23 @@ import 'mvp_screen.dart';
 class MvpView extends StatelessWidget
 {
   final MvpState state;
-  final MvpModel model;
 
-  MvpView(this.state, this.model);
+  MvpView(this.state);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(model.title),
+        title: Text(state.model.title),
       ),
       body: Center(
         child: Text(
-          '${model.counter}',
+          '${state.model.counter}',
           style: Theme.of(context).textTheme.display1,
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: state.onIncrementCounter,
+        onPressed: state.event.onIncrementCounter,
         child: Icon(Icons.add),
       ),
     );
