@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class NavigationScreenTarget extends StatelessWidget {
+class NavigationScreenParams extends StatelessWidget {
   final String value;
 
-  NavigationScreenTarget(this.value);
+  NavigationScreenParams(this.value);
 
   @override
   Widget build(BuildContext context) {
