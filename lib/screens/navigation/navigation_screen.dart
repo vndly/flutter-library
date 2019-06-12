@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/screens/navigation/navigation_screen_replaced.dart';
 
 import 'navigation_screen_params.dart';
+import 'navigation_screen_replaced.dart';
 
 class NavigationScreen extends StatelessWidget {
   @override
