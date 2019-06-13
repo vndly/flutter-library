@@ -26,6 +26,7 @@ flutter:
 
   assets:
     - assets/images/dog.jpg
+    - assets/images/background.jpg
 
   fonts:
     - family: NotoSerif
