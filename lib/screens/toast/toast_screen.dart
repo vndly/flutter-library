@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class ToastScreen extends StatelessWidget {
   void showToast(BuildContext context) {
-    Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text('This is a toast message'),
-    ));
+    Scaffold.of(context).showSnackBar(
+      SnackBar(
+        content: Text('This is a toast message'),
+      ),
+    );
   }
 
   @override

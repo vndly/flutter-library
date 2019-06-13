@@ -18,11 +18,15 @@ class AlertScreen extends StatelessWidget {
                     content: Text('Content'),
                     actions: [
                       FlatButton(
-                        child: Text('Cancel'.toUpperCase()),
+                        child: Text(
+                          'Cancel'.toUpperCase(),
+                        ),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                       FlatButton(
-                        child: Text('Accept'.toUpperCase()),
+                        child: Text(
+                          'Accept'.toUpperCase(),
+                        ),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                     ],
