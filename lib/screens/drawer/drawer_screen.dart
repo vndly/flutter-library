@@ -23,7 +23,9 @@ class DrawerScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          children: [Text('Hello')],
+          children: [
+            Text('Hello'),
+          ],
         ),
       ),
     );
