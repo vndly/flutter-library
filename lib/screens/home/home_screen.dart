@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/alert/alert_screen.dart';
 import 'package:flutter_library/screens/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/drawer/drawer_screen.dart';
+import 'package:flutter_library/screens/font/font_screen.dart';
 import 'package:flutter_library/screens/mvp/mvp_screen.dart';
 import 'package:flutter_library/screens/navigation/navigation_screen.dart';
 import 'package:flutter_library/screens/sheet/sheet_screen.dart';
@@ -19,6 +20,7 @@ class HomeScreen extends StatelessWidget {
     HomeItem('Tabs', (context) => TabsScreen()),
     HomeItem('Alert', (context) => AlertScreen()),
     HomeItem('Sheet', (context) => SheetScreen()),
+    HomeItem('Font', (context) => FontScreen()),
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
