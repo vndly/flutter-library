@@ -90,21 +90,3 @@ class ExtraState {
 abstract class ExtraView<S extends ExtraState> {
   build(BuildContext context, S state);
 }
-
-//-------------------------------------------------------------
-
-/*class Presenter2<M> extends InheritedWidget {
-  final M model;
-
-  Presenter2({
-    @required Widget child,
-    this.model,
-  }) : super(child: child);
-
-  static Screen of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(Screen);
-  }
-
-  @override
-  bool updateShouldNotify(Presenter2 screen) => model != screen.model;
-}*/
