@@ -6,7 +6,8 @@ class Mvp2Screen extends StatefulWidget {
   Mvp2Screen(this.title);
 
   @override
-  State<StatefulWidget> createState() => Mvp2State(Mvp2Model(title, 0));
+  State<StatefulWidget> createState() =>
+      Mvp2State(Mvp2View(), Mvp2Model(title, 0));
 }
 
 @immutable
@@ -19,18 +20,14 @@ class Mvp2Model {
   Mvp2Model increment() => Mvp2Model(title, counter + 1);
 }
 
-class Mvp2State extends State {
-  Mvp2Model _model;
-
-  Mvp2State(this._model);
+class Mvp2State extends ExtraState<Mvp2View, Mvp2Model> {
+  Mvp2State(Mvp2View view, Mvp2Model model) : super(view, model);
 
   void onIncrementCounter() => setState(() => _model = _model.increment());
-
-  @override
-  Widget build(BuildContext context) => Mvp2View().build(context, _model, this);
 }
 
-class Mvp2View {
+class Mvp2View extends ExtraView<Mvp2Model, Mvp2State> {
+  @override
   Widget build(BuildContext context, Mvp2Model model, Mvp2State state) {
     return Scaffold(
       appBar: AppBar(
@@ -48,4 +45,18 @@ class Mvp2View {
       ),
     );
   }
+}
+
+abstract class ExtraView<M, S> {
+  Widget build(BuildContext context, M model, S state);
+}
+
+abstract class ExtraState<V extends ExtraView, M> extends State {
+  V _view;
+  M _model;
+
+  ExtraState(this._view, this._model);
+
+  @override
+  Widget build(BuildContext context) => _view.build(context, _model, this);
 }
