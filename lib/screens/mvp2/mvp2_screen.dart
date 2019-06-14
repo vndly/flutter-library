@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class Mvp2Screen extends ExtraPresenter {
   Mvp2Screen(String title)
       : super(
-          Mvp2State(Mvp2Model(title, 0)),
-          Mvp2View(),
+          Mvp2State(
+            Mvp2Model(title, 0),
+          ),
         );
 }
 
@@ -18,24 +19,27 @@ class Mvp2Model {
   Mvp2Model increment() => Mvp2Model(title, counter + 1);
 }
 
-class Mvp2State extends ExtraState {
-  Mvp2Model model;
+class Mvp2State extends State {
+  Mvp2Model _model;
 
-  Mvp2State(this.model);
+  Mvp2State(this._model);
 
-  void onIncrementCounter() => setState(() => model = model.increment());
+  void onIncrementCounter() => setState(() => _model = _model.increment());
+
+  @override
+  Widget build(BuildContext context) => Mvp2View().build(context, _model, this);
 }
 
-class Mvp2View extends ExtraView<Mvp2State> {
+class Mvp2View extends ExtraView<Mvp2Model, Mvp2State> {
   @override
-  Widget build(BuildContext context, Mvp2State state) {
+  Widget build(BuildContext context, Mvp2Model model, Mvp2State state) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(state.model.title),
+        title: Text(model.title),
       ),
       body: Center(
         child: Text(
-          '${state.model.counter}',
+          '${model.counter}',
           style: Theme.of(context).textTheme.display1,
         ),
       ),
@@ -49,44 +53,15 @@ class Mvp2View extends ExtraView<Mvp2State> {
 
 //-------------------------------------------------------------
 
-class ExtraPresenter<S extends ExtraState, V extends ExtraView>
-    extends StatefulWidget {
+class ExtraPresenter<S extends State> extends StatefulWidget {
   final S state;
-  final V view;
 
-  ExtraPresenter(this.state, this.view);
+  ExtraPresenter(this.state);
 
   @override
-  ExtraPresenterState createState() => ExtraPresenterState(state, view);
+  S createState() => state;
 }
 
-class ExtraPresenterState<S extends ExtraState, V extends ExtraView>
-    extends State {
-  final S state;
-  final V view;
-
-  ExtraPresenterState(this.state, this.view);
-
-  @override
-  Widget build(BuildContext context) {
-    state.addState(this);
-
-    return view.build(context, state);
-  }
-}
-
-class ExtraState {
-  State state;
-
-  void addState(State state) {
-    this.state = state;
-  }
-
-  void setState(VoidCallback fn) {
-    state.setState(fn);
-  }
-}
-
-abstract class ExtraView<S extends ExtraState> {
-  build(BuildContext context, S state);
+abstract class ExtraView<M, S extends State> {
+  build(BuildContext context, M mode, S state);
 }
