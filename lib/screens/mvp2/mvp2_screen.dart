@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Mvp2Screen extends ExtraPresenter {
-  Mvp2Screen(String title)
-      : super(
-          Mvp2State(
-            Mvp2Model(title, 0),
-          ),
-        );
+class Mvp2Screen extends StatefulWidget {
+  final String title;
+
+  Mvp2Screen(this.title);
+
+  @override
+  State<StatefulWidget> createState() => Mvp2State(Mvp2Model(title, 0));
 }
 
 @immutable
@@ -30,8 +30,7 @@ class Mvp2State extends State {
   Widget build(BuildContext context) => Mvp2View().build(context, _model, this);
 }
 
-class Mvp2View extends ExtraView<Mvp2Model, Mvp2State> {
-  @override
+class Mvp2View {
   Widget build(BuildContext context, Mvp2Model model, Mvp2State state) {
     return Scaffold(
       appBar: AppBar(
@@ -49,19 +48,4 @@ class Mvp2View extends ExtraView<Mvp2Model, Mvp2State> {
       ),
     );
   }
-}
-
-//-------------------------------------------------------------
-
-class ExtraPresenter<S extends State> extends StatefulWidget {
-  final S state;
-
-  ExtraPresenter(this.state);
-
-  @override
-  S createState() => state;
-}
-
-abstract class ExtraView<M, S extends State> {
-  build(BuildContext context, M mode, S state);
 }
