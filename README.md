@@ -18,19 +18,4 @@ Sanitizer:
 * new
 * ))
 
-
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(),
-    body: OrientationBuilder(
-      builder: (context, orientation) {
-        return orientation == Orientation.portrait
-            ? _buildVerticalLayout()
-            : _buildHorizontalLayout();
-      },
-    ),
-  );
-}
-
 SystemChrome.setPreferredOrientations(DeviceOrientation.portraitUp);
