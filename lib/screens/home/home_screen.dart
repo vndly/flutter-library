@@ -4,6 +4,7 @@ import 'package:flutter_library/screens/background/background_screen.dart';
 import 'package:flutter_library/screens/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/drawer/drawer_screen.dart';
 import 'package:flutter_library/screens/font/font_screen.dart';
+import 'package:flutter_library/screens/form/form_screen.dart';
 import 'package:flutter_library/screens/media/media_screen.dart';
 import 'package:flutter_library/screens/mvp/mvp_screen.dart';
 import 'package:flutter_library/screens/navigation/navigation_screen.dart';
@@ -27,6 +28,7 @@ class HomeScreen extends StatelessWidget {
     HomeItem('Background', (context) => BackgroundScreen()),
     HomeItem('Scroll', (context) => ScrollScreen()),
     HomeItem('Media', (context) => MediaScreen()),
+    HomeItem('Form', (context) => FormScreen()),
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
