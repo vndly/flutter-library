@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+/*
+ * To fix the orientation of the app:
+ * 
+ * @override
+ * Widget build(BuildContext context) {
+ *   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+ *   return MaterialApp(...);
+ */
 class OrientationScreen extends StatelessWidget {
   Widget _portraitLayout() {
     return Container(
