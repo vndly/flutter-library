@@ -23,7 +23,6 @@ class CanvasScreenState extends State<CanvasScreen> {
             Matrix4 temp = _matrix * sm;
             Vector3 scale = Vector3(0, 0, 0);
             temp.decompose(Vector3(0, 0, 0), Quaternion(0, 0, 0, 0), scale);
-            print(scale.x);
 
             if (scale.x >= 1) {
               _matrix = temp;
@@ -32,12 +31,14 @@ class CanvasScreenState extends State<CanvasScreen> {
             _matrix = _matrix * tm;
           });
         },
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: Color(0xff000000),
-          child: CustomPaint(
-            painter: OpenPainter(_matrix),
+        child: GestureDetector(
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Color(0xff000000),
+            child: CustomPaint(
+              painter: OpenPainter(_matrix),
+            ),
           ),
         ),
       ),
@@ -79,4 +80,20 @@ class OpenPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
+
+  @override
+  bool hitTest(Offset position) {
+    Offset point = offsetTransformed(_matrix, position);
+    print('hit: $point');
+    return false;
+  }
+
+  Offset offsetTransformed(Matrix4 transform, Offset point) {
+    Matrix4 inverse = Matrix4.tryInvert(transform);
+    if (inverse == null) {
+      return point;
+    } else {
+      return MatrixUtils.transformPoint(inverse, point);
+    }
+  }
 }
