@@ -38,28 +38,34 @@ class CanvasScreenState extends State<CanvasScreen> {
 
 class OpenPainter extends CustomPainter {
   final Paint _paint;
-  final Paint _paintBackground;
   final Matrix4 _matrix;
 
   OpenPainter(this._matrix)
       : _paint = Paint()
           ..style = PaintingStyle.fill
           ..color = Color(0xffff0000)
-          ..isAntiAlias = true,
-        _paintBackground = Paint()
-          ..style = PaintingStyle.fill
-          ..color = Color(0xff000000);
+          ..isAntiAlias = true;
 
   @override
   void paint(Canvas canvas, Size size) {
+    Offset center = size.center(Offset.zero);
+    double radius = size.width / 8;
+
     canvas.transform(_matrix.storage);
 
-    canvas.drawRect(
-        Rect.fromPoints(Offset(0, 0), Offset(size.width, size.height)),
-        _paintBackground);
+    canvas.drawCircle(center, radius, _paint);
+    canvas.drawCircle(center.translate(radius * 2.5, 0), radius, _paint);
+    canvas.drawCircle(center.translate(-radius * 2.5, 0), radius, _paint);
 
-    canvas.drawRect(
-        Rect.fromPoints(Offset(100, 100), Offset(300, 300)), _paint);
+    canvas.drawCircle(
+        center.translate(radius * 1.2, -radius * 2.5), radius, _paint);
+    canvas.drawCircle(
+        center.translate(-radius * 1.2, -radius * 2.5), radius, _paint);
+
+    canvas.drawCircle(
+        center.translate(radius * 1.2, radius * 2.5), radius, _paint);
+    canvas.drawCircle(
+        center.translate(-radius * 1.2, radius * 2.5), radius, _paint);
   }
 
   @override
