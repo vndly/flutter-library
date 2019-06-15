@@ -20,7 +20,16 @@ class CanvasScreenState extends State<CanvasScreen> {
         shouldRotate: false,
         onMatrixUpdate: (Matrix4 m, Matrix4 tm, Matrix4 sm, Matrix4 rm) {
           setState(() {
-            _matrix = m;
+            Matrix4 temp = _matrix * sm;
+            Vector3 scale = Vector3(0, 0, 0);
+            temp.decompose(Vector3(0, 0, 0), Quaternion(0, 0, 0, 0), scale);
+            print(scale.x);
+
+            if (scale.x >= 1) {
+              _matrix = temp;
+            }
+
+            _matrix = _matrix * tm;
           });
         },
         child: Container(
