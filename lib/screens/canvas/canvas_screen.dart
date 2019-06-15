@@ -1,6 +1,6 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
+import 'package:matrix_gesture_detector/matrix_gesture_detector.dart';
 
 class CanvasScreen extends StatefulWidget {
   @override
@@ -8,20 +8,7 @@ class CanvasScreen extends StatefulWidget {
 }
 
 class CanvasScreenState extends State<CanvasScreen> {
-  double _scale = 1;
-  double _previousScale;
-  Offset _focal = Offset(0, 0);
-
-  /*void _scaleUpdate(ScaleUpdateDetails scaleDetails) {
-    print('${scaleDetails.horizontalScale} ${scaleDetails.verticalScale}');
-
-    double horizontal = max(scaleDetails.horizontalScale, 1);
-    double vertical = max(scaleDetails.verticalScale, 1);
-
-    setState(() {
-      _scale = max(horizontal, vertical);
-    });
-  }*/
+  Matrix4 _matrix = Matrix4.identity();
 
   @override
   Widget build(BuildContext context) {
@@ -29,30 +16,19 @@ class CanvasScreenState extends State<CanvasScreen> {
       appBar: AppBar(
         title: Text('Canvas'),
       ),
-      body: GestureDetector(
-        onScaleStart: (ScaleStartDetails details) {
-          _previousScale = _scale;
-        },
-        onScaleUpdate: (ScaleUpdateDetails details) {
+      body: MatrixGestureDetector(
+        shouldRotate: false,
+        onMatrixUpdate: (Matrix4 m, Matrix4 tm, Matrix4 sm, Matrix4 rm) {
           setState(() {
-            _focal = details.focalPoint;
-            _scale = _previousScale * details.scale;
+            _matrix = m;
           });
         },
-        onScaleEnd: (ScaleEndDetails details) {
-          _previousScale = null;
-        },
         child: Container(
-          width: 1000,
-          height: 1000,
-          color: Color(0xff00ff00),
-          child: Transform(
-            transform: Matrix4.diagonal3(new Vector3(_scale, _scale, _scale))
-              ..translate(_focal.dx, _focal.dy),
-            alignment: FractionalOffset.center,
-            child: CustomPaint(
-              painter: OpenPainter(_scale),
-            ),
+          width: double.infinity,
+          height: double.infinity,
+          color: Color(0xff000000),
+          child: CustomPaint(
+            painter: OpenPainter(_matrix),
           ),
         ),
       ),
@@ -62,17 +38,26 @@ class CanvasScreenState extends State<CanvasScreen> {
 
 class OpenPainter extends CustomPainter {
   final Paint _paint;
-  final double _scale;
+  final Paint _paintBackground;
+  final Matrix4 _matrix;
 
-  OpenPainter(this._scale)
+  OpenPainter(this._matrix)
       : _paint = Paint()
           ..style = PaintingStyle.fill
           ..color = Color(0xffff0000)
-          ..isAntiAlias = true;
+          ..isAntiAlias = true,
+        _paintBackground = Paint()
+          ..style = PaintingStyle.fill
+          ..color = Color(0xff000000);
 
   @override
   void paint(Canvas canvas, Size size) {
-    //canvas.scale(_scale);
+    canvas.transform(_matrix.storage);
+
+    canvas.drawRect(
+        Rect.fromPoints(Offset(0, 0), Offset(size.width, size.height)),
+        _paintBackground);
+
     canvas.drawRect(
         Rect.fromPoints(Offset(100, 100), Offset(300, 300)), _paint);
   }
