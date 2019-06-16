@@ -4,17 +4,18 @@ TODO:
 * Examples of state management with:
     - Redux
     - RxDart
-* Page View
+    - InheritedWidget
+
 * FadeInImage
-* InheritedWidget
 * ClipRRect
+* Bottom tab bar
+
 * ValueListenableBuilder
 * HTTP requests (FutureBuilder)
 * Multiple environments
 * Use localized text
 * Navigate to a new screen and destroy all the others behind
 * Infinite scroll list view
-* Bottom tab bar
 * Firebase (analytics, push messages, crash reports)
 * Logs
 * Shared preferences (normal and encrypted)
