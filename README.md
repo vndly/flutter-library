@@ -4,8 +4,6 @@ TODO:
 * Examples of state management with:
     - Redux
     - RxDart
-* Use SGV icons
-* App icon
 * Page View
 * FadeInImage
 * InheritedWidget

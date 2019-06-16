@@ -18,11 +18,18 @@ dependencies:
   provider: ^3.0.0+1
   scoped_model: ^1.0.1
   flutter_svg: ^0.12.4+2
+  flutter_launcher_icons: ^0.7.2
 
 dev_dependencies:
 
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/launcher/icon.png"
+  # flutter pub run flutter_launcher_icons:main
 
 flutter:
 
