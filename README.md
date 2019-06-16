@@ -6,8 +6,6 @@ TODO:
     - RxDart
     - InheritedWidget
 
-* Bottom tab bar
-
 * ValueListenableBuilder
 * HTTP requests (FutureBuilder)
 * Multiple environments

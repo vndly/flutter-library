@@ -9,6 +9,7 @@ import 'package:flutter_library/screens/state/mvp2/mvp2_screen.dart';
 import 'package:flutter_library/screens/state/scoped_model/scoped_model_screen.dart';
 import 'package:flutter_library/screens/ui/alert/alert_screen.dart';
 import 'package:flutter_library/screens/ui/background/background_screen.dart';
+import 'package:flutter_library/screens/ui/bottom_bar/bottom_bar_screen.dart';
 import 'package:flutter_library/screens/ui/canvas/canvas_screen.dart';
 import 'package:flutter_library/screens/ui/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/ui/drawer/drawer_screen.dart';
@@ -35,6 +36,7 @@ class HomeScreen extends StatelessWidget {
 
     // ui
     HomeItem('UI'),
+    HomeItem('Bottom Bar', (context) => BottomBarScreen()),
     HomeItem('Image', (context) => ImageScreen()),
     HomeItem('Page View', (context) => PageViewScreen()),
     HomeItem('Icon', (context) => IconScreen()),

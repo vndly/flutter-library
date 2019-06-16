@@ -17,7 +17,7 @@ class PageViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var pages = [
+    final pages = [
       PageItem('Page 1', Colors.red),
       PageItem('Page 2', Colors.green),
       PageItem('Page 3', Colors.blue),
