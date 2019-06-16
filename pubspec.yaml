@@ -15,6 +15,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   matrix_gesture_detector: ^0.1.0
+  scoped_model: ^1.0.1
 
 dev_dependencies:
 

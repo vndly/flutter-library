@@ -11,6 +11,7 @@ import 'package:flutter_library/screens/mvp/mvp_screen.dart';
 import 'package:flutter_library/screens/mvp2/mvp2_screen.dart';
 import 'package:flutter_library/screens/navigation/navigation_screen.dart';
 import 'package:flutter_library/screens/orientation/orientation_screen.dart';
+import 'package:flutter_library/screens/scoped_model/scoped_model_screen.dart';
 import 'package:flutter_library/screens/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/sheet/sheet_screen.dart';
 import 'package:flutter_library/screens/tabs/tabs_screen.dart';
@@ -19,6 +20,7 @@ import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
+    HomeItem('Scoped Model', (context) => ScopedModelScreen()),
     HomeItem('Canvas', (context) => CanvasScreen()),
     HomeItem('MVP', (context) => MvpScreen('MVP')),
     HomeItem('MVP2', (context) => Mvp2Screen('MVP2')),
