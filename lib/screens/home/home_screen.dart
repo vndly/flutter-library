@@ -15,6 +15,7 @@ import 'package:flutter_library/screens/ui/drawer/drawer_screen.dart';
 import 'package:flutter_library/screens/ui/font/font_screen.dart';
 import 'package:flutter_library/screens/ui/form/form_screen.dart';
 import 'package:flutter_library/screens/ui/icon/icon_screen.dart';
+import 'package:flutter_library/screens/ui/image/image_screen.dart';
 import 'package:flutter_library/screens/ui/page_view/page_view_screen.dart';
 import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
@@ -34,6 +35,7 @@ class HomeScreen extends StatelessWidget {
 
     // ui
     HomeItem('UI'),
+    HomeItem('Image', (context) => ImageScreen()),
     HomeItem('Page View', (context) => PageViewScreen()),
     HomeItem('Icon', (context) => IconScreen()),
     HomeItem('Canvas', (context) => CanvasScreen()),

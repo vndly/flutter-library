@@ -44,6 +44,9 @@ flutter:
     - assets/images/dog.jpg
     - assets/images/background.jpg
 
+    # gifs
+    - assets/gifs/loading.gif
+
   fonts:
     - family: NotoSerif
       fonts:

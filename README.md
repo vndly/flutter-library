@@ -6,7 +6,6 @@ TODO:
     - RxDart
     - InheritedWidget
 
-* FadeInImage
 * ClipRRect
 * Bottom tab bar
 
