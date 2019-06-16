@@ -2,13 +2,16 @@
 
 TODO:
 * Examples of state management with:
-    - Provider
-    - ChangeNotifier/ChangeNotifierProvider/Consumer (https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple)
     - Redux
     - RxDart
 * Use SGV icons
 * App icon
-* HTTP requests
+* Page View
+* FadeInImage
+* InheritedWidget
+* ClipRRect
+* ValueListenableBuilder
+* HTTP requests (FutureBuilder)
 * Multiple environments
 * Use localized text
 * Navigate to a new screen and destroy all the others behind

@@ -3,6 +3,7 @@ import 'package:flutter_library/screens/alert/alert_screen.dart';
 import 'package:flutter_library/screens/background/background_screen.dart';
 import 'package:flutter_library/screens/bloc/bloc_screen.dart';
 import 'package:flutter_library/screens/canvas/canvas_screen.dart';
+import 'package:flutter_library/screens/change_notifier/change_notifier_screen.dart';
 import 'package:flutter_library/screens/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/drawer/drawer_screen.dart';
 import 'package:flutter_library/screens/font/font_screen.dart';
@@ -21,24 +22,30 @@ import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
-    HomeItem('Bloc', (context) => BlocScreen()),
+    // state
+    HomeItem('Change Notifier', (context) => ChangeNotifierScreen()),
     HomeItem('Scoped Model', (context) => ScopedModelScreen()),
-    HomeItem('Canvas', (context) => CanvasScreen()),
+    HomeItem('Bloc', (context) => BlocScreen()),
     HomeItem('MVP', (context) => MvpScreen('MVP')),
     HomeItem('MVP2', (context) => Mvp2Screen('MVP2')),
+
+    // ui
+    HomeItem('Canvas', (context) => CanvasScreen()),
     HomeItem('Dialog', (context) => DialogScreen()),
     HomeItem('Toast', (context) => ToastScreen()),
-    HomeItem('Navigation', (context) => NavigationScreen()),
     HomeItem('Drawer', (context) => DrawerScreen()),
     HomeItem('Tabs', (context) => TabsScreen()),
     HomeItem('Alert', (context) => AlertScreen()),
     HomeItem('Sheet', (context) => SheetScreen()),
-    HomeItem('Font', (context) => FontScreen()),
     HomeItem('Background', (context) => BackgroundScreen()),
-    HomeItem('Scroll', (context) => ScrollScreen()),
-    HomeItem('Media', (context) => MediaScreen()),
-    HomeItem('Orientation', (context) => OrientationScreen()),
     HomeItem('Form', (context) => FormScreen()),
+    HomeItem('Scroll', (context) => ScrollScreen()),
+    HomeItem('Font', (context) => FontScreen()),
+
+    // misc
+    HomeItem('Media', (context) => MediaScreen()),
+    HomeItem('Navigation', (context) => NavigationScreen()),
+    HomeItem('Orientation', (context) => OrientationScreen()),
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
