@@ -2,11 +2,10 @@
 
 TODO:
 * Examples of state management with:
+    - InheritedWidget
     - Redux
     - RxDart
-    - InheritedWidget
 
-* ValueListenableBuilder
 * HTTP requests (FutureBuilder)
 * Multiple environments
 * Use localized text
@@ -15,7 +14,6 @@ TODO:
 * Firebase (analytics, push messages, crash reports)
 * Logs
 * Shared preferences (normal and encrypted)
-* Events
 * Database
 * Date and number formatters
 * Facebook and Google login
