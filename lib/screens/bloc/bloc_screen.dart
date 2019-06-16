@@ -22,7 +22,7 @@ class TextCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<int>(
-      stream: bloc._output.stream,
+      stream: bloc.ouput,
       initialData: 0,
       builder: (context, snapshot) => Text(
             '${snapshot.data}',
@@ -36,7 +36,7 @@ class ButtonCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: bloc.onIncrementCounter,
+      onPressed: () => bloc.input.add(null),
       child: Icon(Icons.add),
     );
   }
@@ -46,17 +46,16 @@ class Bloc {
   ScopedData _data;
 
   final _input = StreamController<Null>();
+  Sink<Null> get input => _input.sink;
+
   final _output = StreamController<int>();
+  Stream<int> get ouput => _output.stream;
 
   Bloc(this._data) {
-    _input.stream.listen((data) {
+    _input.stream.listen((_) {
       _data = _data.increment();
       _output.add(_data.counter);
     });
-  }
-
-  void onIncrementCounter() {
-    _input.sink.add(null);
   }
 
   void close() {
