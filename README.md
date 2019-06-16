@@ -1,6 +1,11 @@
 # Flutter library
 
 TODO:
+* Examples of state management with:
+    - Provider
+    - ChangeNotifier/ChangeNotifierProvider/Consumer (https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple)
+    - Redux
+    - RxDart
 * Use SGV icons
 * App icon
 * HTTP requests
@@ -23,6 +28,7 @@ Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible
 * Use single quote instead of double quote
 * Use [] instead of <Widget>[]
+* Use => notation for a single line function
 
 Sanitizer:
 * "
