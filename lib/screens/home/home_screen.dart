@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/screens/alert/alert_screen.dart';
-import 'package:flutter_library/screens/background/background_screen.dart';
-import 'package:flutter_library/screens/bloc/bloc_screen.dart';
-import 'package:flutter_library/screens/canvas/canvas_screen.dart';
-import 'package:flutter_library/screens/change_notifier/change_notifier_screen.dart';
-import 'package:flutter_library/screens/dialog/dialog_screen.dart';
-import 'package:flutter_library/screens/drawer/drawer_screen.dart';
-import 'package:flutter_library/screens/font/font_screen.dart';
-import 'package:flutter_library/screens/form/form_screen.dart';
-import 'package:flutter_library/screens/media/media_screen.dart';
-import 'package:flutter_library/screens/mvp/mvp_screen.dart';
-import 'package:flutter_library/screens/mvp2/mvp2_screen.dart';
-import 'package:flutter_library/screens/navigation/navigation_screen.dart';
-import 'package:flutter_library/screens/orientation/orientation_screen.dart';
-import 'package:flutter_library/screens/scoped_model/scoped_model_screen.dart';
-import 'package:flutter_library/screens/scroll/scroll_screen.dart';
-import 'package:flutter_library/screens/sheet/sheet_screen.dart';
-import 'package:flutter_library/screens/tabs/tabs_screen.dart';
-import 'package:flutter_library/screens/toast/toast_screen.dart';
+import 'package:flutter_library/screens/misc/media/media_screen.dart';
+import 'package:flutter_library/screens/misc/navigation/navigation_screen.dart';
+import 'package:flutter_library/screens/misc/orientation/orientation_screen.dart';
+import 'package:flutter_library/screens/state/bloc/bloc_screen.dart';
+import 'package:flutter_library/screens/state/change_notifier/change_notifier_screen.dart';
+import 'package:flutter_library/screens/state/mvp/mvp_screen.dart';
+import 'package:flutter_library/screens/state/mvp2/mvp2_screen.dart';
+import 'package:flutter_library/screens/state/scoped_model/scoped_model_screen.dart';
+import 'package:flutter_library/screens/ui/alert/alert_screen.dart';
+import 'package:flutter_library/screens/ui/background/background_screen.dart';
+import 'package:flutter_library/screens/ui/canvas/canvas_screen.dart';
+import 'package:flutter_library/screens/ui/dialog/dialog_screen.dart';
+import 'package:flutter_library/screens/ui/drawer/drawer_screen.dart';
+import 'package:flutter_library/screens/ui/font/font_screen.dart';
+import 'package:flutter_library/screens/ui/form/form_screen.dart';
+import 'package:flutter_library/screens/ui/icon/icon_screen.dart';
+import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
+import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
+import 'package:flutter_library/screens/ui/tabs/tabs_screen.dart';
+import 'package:flutter_library/screens/ui/toast/toast_screen.dart';
 import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
     // state
+    HomeItem('State'),
     HomeItem('Change Notifier', (context) => ChangeNotifierScreen()),
     HomeItem('Scoped Model', (context) => ScopedModelScreen()),
     HomeItem('Bloc', (context) => BlocScreen()),
@@ -30,6 +32,8 @@ class HomeScreen extends StatelessWidget {
     HomeItem('MVP2', (context) => Mvp2Screen('MVP2')),
 
     // ui
+    HomeItem('UI'),
+    HomeItem('Icon', (context) => IconScreen()),
     HomeItem('Canvas', (context) => CanvasScreen()),
     HomeItem('Dialog', (context) => DialogScreen()),
     HomeItem('Toast', (context) => ToastScreen()),
@@ -43,6 +47,7 @@ class HomeScreen extends StatelessWidget {
     HomeItem('Font', (context) => FontScreen()),
 
     // misc
+    HomeItem('Misc'),
     HomeItem('Media', (context) => MediaScreen()),
     HomeItem('Navigation', (context) => NavigationScreen()),
     HomeItem('Orientation', (context) => OrientationScreen()),
@@ -56,16 +61,29 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildHomeItem(BuildContext context, int index) {
-    return InkWell(
-      child: Padding(
+    HomeItem item = items[index];
+
+    if (item.isHeader) {
+      return Container(
+        color: Colors.grey,
         padding: const EdgeInsets.all(16),
         child: Text(
-          items[index].name,
-          style: TextStyle(color: Colors.black),
+          item.name,
+          style: TextStyle(color: Colors.white),
         ),
-      ),
-      onTap: () => _onItemSelected(context, items[index]),
-    );
+      );
+    } else {
+      return InkWell(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            item.name,
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+        onTap: () => _onItemSelected(context, item),
+      );
+    }
   }
 
   @override

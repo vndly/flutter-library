@@ -3,8 +3,10 @@ import 'package:flutter/cupertino.dart';
 typedef Widget Builder(BuildContext context);
 
 class HomeItem {
-  String name;
-  WidgetBuilder builder;
+  final String name;
+  final WidgetBuilder builder;
 
-  HomeItem(this.name, this.builder);
+  HomeItem([this.name, this.builder]);
+
+  bool get isHeader => (builder == null);
 }
