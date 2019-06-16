@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/misc/event/event_screen.dart';
+import 'package:flutter_library/screens/misc/http/http_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
 import 'package:flutter_library/screens/misc/navigation/navigation_screen.dart';
 import 'package:flutter_library/screens/misc/orientation/orientation_screen.dart';
@@ -55,6 +56,7 @@ class HomeScreen extends StatelessWidget {
 
     // misc
     HomeItem('Misc'),
+    HomeItem('HTTP', (context) => HttpScreen()),
     HomeItem('Event', (context) => EventScreen()),
     HomeItem('Media', (context) => MediaScreen()),
     HomeItem('Navigation', (context) => NavigationScreen()),

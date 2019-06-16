@@ -27,12 +27,12 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         onTap: _onTabSelected,
         items: [
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text(_pages[0].title),
+            icon: Icon(Icons.home),
+            title: Text(_pages[0].title),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text(_pages[1].title),
+            icon: Icon(Icons.mail),
+            title: Text(_pages[1].title),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
