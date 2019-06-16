@@ -71,24 +71,40 @@ class _HttpScreenState extends State<HttpScreen> {
 
 enum Status { init, loading, content, error }
 
-class GetDog {
+class GetDog extends EndPoint<Dog> {
   static const String URL = 'https://dog.ceo/api/breeds/image/random';
 
+  @override
   void execute(void success(Dog dog), void error(Response response)) async {
-    var client = http.Client();
-
     try {
-      var response = await client.get(URL);
+      var response = await super.get(URL);
+      success(Dog.json(response.body));
+    } on Response catch (e) {
+      error(e);
+    }
+  }
+}
+
+abstract class EndPoint<T> {
+  final _client = http.Client();
+
+  void execute(void success(T result), void error(Response response));
+
+  Future<Response> get(url, {Map<String, String> headers}) async {
+    try {
+      var response = await _client.get(url, headers: headers);
 
       if (response.statusCode == 200) {
-        success(Dog.json(response.body));
+        return response;
       } else {
-        error(response);
+        throw response;
       }
+    } on Response catch (_) {
+      rethrow;
     } catch (e) {
-      error(Response(null, 500));
+      throw Response('', 500);
     } finally {
-      client.close();
+      _client.close();
     }
   }
 }
