@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert' as Json;
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 class HttpScreen extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class HttpScreen extends StatefulWidget {
 class _HttpScreenState extends State<HttpScreen> {
   Status _state = Status.init;
   String _data;
+  Response _error;
 
   void _loadContent() async {
     setState(() {
@@ -22,13 +24,24 @@ class _HttpScreenState extends State<HttpScreen> {
         _data = dog.url;
         _state = Status.content;
       });
-    }, () {
-      print('Error');
+    }, (response) {
+      setState(() {
+        _error = response;
+        _state = Status.error;
+      });
     });
   }
 
   Widget _body() {
     switch (_state) {
+      case Status.init:
+        return Center(
+          child: RaisedButton(
+            child: Text('Load'),
+            onPressed: _loadContent,
+          ),
+        );
+
       case Status.loading:
         return Center(
           child: CircularProgressIndicator(),
@@ -41,10 +54,7 @@ class _HttpScreenState extends State<HttpScreen> {
 
       default:
         return Center(
-          child: RaisedButton(
-            child: Text('Load'),
-            onPressed: _loadContent,
-          ),
+          child: Text('${_error.statusCode} ${_error.reasonPhrase}'),
         );
     }
   }
@@ -59,21 +69,26 @@ class _HttpScreenState extends State<HttpScreen> {
   }
 }
 
-enum Status { init, loading, content }
+enum Status { init, loading, content, error }
 
 class GetDog {
   static const String URL = 'https://dog.ceo/api/breeds/image/random';
 
-  void execute(void success(Dog dog), void error()) async {
+  void execute(void success(Dog dog), void error(Response response)) async {
     var client = http.Client();
 
     try {
       var response = await client.get(URL);
-      var json = Json.jsonDecode(response.body);
-      var dog = Dog(json['message']);
-      success(dog);
+
+      if (response.statusCode == 200) {
+        var json = Json.jsonDecode(response.body);
+        var dog = Dog(json['message']);
+        success(dog);
+      } else {
+        error(response);
+      }
     } catch (e) {
-      error();
+      error(Response(null, 500));
     } finally {
       client.close();
     }
