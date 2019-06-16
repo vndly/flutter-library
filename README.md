@@ -6,7 +6,6 @@ TODO:
     - RxDart
     - InheritedWidget
 
-* ClipRRect
 * Bottom tab bar
 
 * ValueListenableBuilder

@@ -12,9 +12,12 @@ class ImageScreen extends StatelessWidget {
         title: Text('Image'),
       ),
       body: Center(
-        child: FadeInImage.assetNetwork(
-          placeholder: 'assets/gifs/loading.gif',
-          image: 'https://picsum.photos/500?image=$index',
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: FadeInImage.assetNetwork(
+            placeholder: 'assets/gifs/loading.gif',
+            image: 'https://picsum.photos/250?image=$index',
+          ),
         ),
       ),
     );
