@@ -81,9 +81,7 @@ class GetDog {
       var response = await client.get(URL);
 
       if (response.statusCode == 200) {
-        var json = Json.jsonDecode(response.body);
-        var dog = Dog(json['message']);
-        success(dog);
+        success(Dog.json(response.body));
       } else {
         error(response);
       }
@@ -100,4 +98,10 @@ class Dog {
   final String url;
 
   Dog(this.url);
+
+  static Dog json(String json) {
+    var data = Json.jsonDecode(json);
+
+    return Dog(data['message']);
+  }
 }
