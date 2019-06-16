@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/alert/alert_screen.dart';
 import 'package:flutter_library/screens/background/background_screen.dart';
+import 'package:flutter_library/screens/bloc/bloc_screen.dart';
 import 'package:flutter_library/screens/canvas/canvas_screen.dart';
 import 'package:flutter_library/screens/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/drawer/drawer_screen.dart';
@@ -20,6 +21,7 @@ import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
+    HomeItem('Bloc', (context) => BlocScreen()),
     HomeItem('Scoped Model', (context) => ScopedModelScreen()),
     HomeItem('Canvas', (context) => CanvasScreen()),
     HomeItem('MVP', (context) => MvpScreen('MVP')),
