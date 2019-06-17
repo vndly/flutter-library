@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert' as Json;
-import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
+import 'package:dafluta/dafluta.dart';
 
 class HttpScreen extends StatefulWidget {
   @override
@@ -11,7 +11,7 @@ class HttpScreen extends StatefulWidget {
 class _HttpScreenState extends State<HttpScreen> {
   Status _state = Status.init;
   String _data;
-  Response _error;
+  String _error;
 
   void _loadContent() async {
     setState(() {
@@ -19,17 +19,21 @@ class _HttpScreenState extends State<HttpScreen> {
     });
 
     var getDog = GetDog();
-    getDog.execute((dog) {
+    var result = await getDog.call();
+
+    if (result.isSuccessful) {
       setState(() {
-        _data = dog.url;
+        _data = result.value.url;
         _state = Status.content;
       });
-    }, (response) {
+    } else {
       setState(() {
-        _error = response;
+        _error = result.isUnsuccessful
+            ? result.response.reasonPhrase
+            : result.exception.toString();
         _state = Status.error;
       });
-    });
+    }
   }
 
   Widget _body() {
@@ -54,7 +58,7 @@ class _HttpScreenState extends State<HttpScreen> {
 
       default:
         return Center(
-          child: Text('${_error.statusCode} ${_error.reasonPhrase}'),
+          child: Text('$_error'),
         );
     }
   }
@@ -71,41 +75,16 @@ class _HttpScreenState extends State<HttpScreen> {
 
 enum Status { init, loading, content, error }
 
-class GetDog extends EndPoint<Dog> {
+class GetDog extends ValueEndPoint<Dog> {
   static const String URL = 'https://dog.ceo/api/breeds/image/random';
 
-  @override
-  void execute(void success(Dog dog), void error(Response response)) async {
-    try {
-      var response = await super.get(URL);
-      success(Dog.json(response.body));
-    } on Response catch (e) {
-      error(e);
-    }
+  Future<EndPointResult<Dog>> call() {
+    return super.get(URL);
   }
-}
 
-abstract class EndPoint<T> {
-  final _client = http.Client();
-
-  void execute(void success(T result), void error(Response response));
-
-  Future<Response> get(url, {Map<String, String> headers}) async {
-    try {
-      var response = await _client.get(url, headers: headers);
-
-      if (response.statusCode == 200) {
-        return response;
-      } else {
-        throw response;
-      }
-    } on Response catch (_) {
-      rethrow;
-    } catch (e) {
-      throw Response('', 500);
-    } finally {
-      _client.close();
-    }
+  @override
+  Dog convert(Response response) {
+    return Dog.json(response.body);
   }
 }
 

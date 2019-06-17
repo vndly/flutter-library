@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  dafluta:
+    dependency: "direct main"
+    description:
+      name: dafluta
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   event_taxi:
     dependency: "direct main"
     description:
