@@ -6,14 +6,13 @@ TODO:
     - Redux
     - RxDart
 
-* HTTP requests (FutureBuilder)
 * Multiple environments
 * Use localized text
 * Navigate to a new screen and destroy all the others behind
 * Infinite scroll list view
 * Firebase (analytics, push messages, crash reports)
 * Logs
-* Shared preferences (normal and encrypted)
+* Shared preferences (encrypted)
 * Database
 * Date and number formatters
 * Facebook and Google login

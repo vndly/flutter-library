@@ -4,6 +4,7 @@ import 'package:flutter_library/screens/misc/http/http_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
 import 'package:flutter_library/screens/misc/navigation/navigation_screen.dart';
 import 'package:flutter_library/screens/misc/orientation/orientation_screen.dart';
+import 'package:flutter_library/screens/misc/shared_preferences/shared_preferences_screen.dart';
 import 'package:flutter_library/screens/state/bloc/bloc_screen.dart';
 import 'package:flutter_library/screens/state/change_notifier/change_notifier_screen.dart';
 import 'package:flutter_library/screens/state/mvp/mvp_screen.dart';
@@ -56,6 +57,7 @@ class HomeScreen extends StatelessWidget {
 
     // misc
     HomeItem('Misc'),
+    HomeItem('Shared Preferences', (context) => SharedPreferencesScreen()),
     HomeItem('HTTP', (context) => HttpScreen()),
     HomeItem('Event', (context) => EventScreen()),
     HomeItem('Media', (context) => MediaScreen()),
