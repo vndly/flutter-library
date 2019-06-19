@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'navigation_screen_params.dart';
+import 'package:flutter_library/screens/misc/navigation/navigation_screen_params.dart';
 import 'navigation_screen_replaced.dart';
 
 class NavigationScreen extends StatelessWidget {
@@ -14,15 +14,15 @@ class NavigationScreen extends StatelessWidget {
           children: [
             RaisedButton(
               onPressed: () async {
-                String value =
-                    await NavigationScreenParams.instance(context, 'Hello!');
+                String value = await Navigator.of(context)
+                    .push(NavigationScreenParams.instance('Hello!'));
                 print(value);
               },
               child: Text('Open with params'),
             ),
             RaisedButton(
               onPressed: () => Navigator.of(context).pushReplacement(
-                    NavigationScreenReplaced.instance(context),
+                    NavigationScreenReplaced.instance(),
                   ),
               child: Text('Open replacing'),
             ),

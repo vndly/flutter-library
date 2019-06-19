@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/utils/nav.dart';
 
 class NavigationScreenParams extends StatelessWidget {
   final String value;
 
   NavigationScreenParams(this.value);
 
-  static Future<T> instance<T>(BuildContext context, String value) {
-    return Nav.push(context, NavigationScreenParams(value));
+  static MaterialPageRoute<T> instance<T>(String value) {
+    return MaterialPageRoute(
+      builder: (context) => NavigationScreenParams(value),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        Nav.pop(context, 'Canceled');
+        Navigator.of(context).pop('Canceled');
         return Future.value(false);
       },
       child: Scaffold(
@@ -23,7 +24,7 @@ class NavigationScreenParams extends StatelessWidget {
         ),
         body: Center(
           child: RaisedButton(
-            onPressed: () => Nav.pop(context, 'Bye!'),
+            onPressed: () => Navigator.of(context).pop('Bye!'),
             child: Text('Go back'),
           ),
         ),

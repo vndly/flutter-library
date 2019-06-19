@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/utils/nav.dart';
 
 class NavigationScreenReplaced extends StatelessWidget {
-  static MaterialPageRoute instance(BuildContext context) {
+  static MaterialPageRoute<T> instance<T>() {
     return MaterialPageRoute(
       builder: (context) => NavigationScreenReplaced(),
     );
@@ -16,7 +15,7 @@ class NavigationScreenReplaced extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
-          onPressed: () => Nav.pop(context),
+          onPressed: () => Navigator.of(context).pop(),
           child: Text('Go back'),
         ),
       ),

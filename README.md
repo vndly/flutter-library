@@ -6,6 +6,21 @@ TODO:
     - Redux
     - RxDart
 
+Create SuperStateWidget
+SperStateWidget(
+    state: MySuperState(...)
+    builder: (context, model, events)
+)
+
+class MySuperState extends SuperState {}
+
+class SuperStateWidget<S extends SuperState>
+{
+    final S state;
+
+    state.setParent(this);
+}
+
 * Multiple environments
 * Use localized text
 * Navigate to a new screen and destroy all the others behind
@@ -24,6 +39,7 @@ Guidelines:
 * Use single quote instead of double quote
 * Use [] instead of <Widget>[]
 * Use => notation for a single line function
+* Use 'var' when declaring variables in method
 
 Sanitizer:
 * "

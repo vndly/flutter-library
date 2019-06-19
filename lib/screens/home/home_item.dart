@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-typedef Widget Builder(BuildContext context);
-
 class HomeItem {
   final String name;
   final WidgetBuilder builder;
