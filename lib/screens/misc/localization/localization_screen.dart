@@ -13,10 +13,49 @@ class LocalizationScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(Localized.of(context).title),
+            Text(SuperLocalized.title),
+            Text(SuperLocalized.message('Yo!')),
+            Text(SuperLocalized.minutes(0)),
+            Text(SuperLocalized.minutes(1)),
+            Text(SuperLocalized.minutes(3)),
           ],
         ),
       ),
     );
+  }
+}
+
+class SuperLocalized {
+  static String title = '';
+  static Function message = (String value) => '';
+  static Function minutes = (num value) => '';
+
+  static void load(Locale locale) {
+    if (locale.languageCode == 'es') {
+      SuperLocalized.title = 'El titulazo';
+      SuperLocalized.message = (String value) => 'El mesajazo: $value';
+      SuperLocalized.minutes = (num value) {
+        if (value == 0) {
+          return 'Sin minutos';
+        } else if (value == 1) {
+          return '1 minuto';
+        } else {
+          return '$value minutazos';
+        }
+      };
+    } else if (locale.languageCode == 'en') {
+      SuperLocalized.title = 'Da title';
+      SuperLocalized.message = (String value) => 'Da message: $value';
+      SuperLocalized.minutes = (num value) {
+        if (value == 0) {
+          return 'No minutes';
+        } else if (value == 1) {
+          return '1 minute';
+        } else {
+          return '$value minutes';
+        }
+      };
+    }
   }
 }
 
@@ -54,8 +93,11 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<Localized> {
       .contains(locale.languageCode);
 
   @override
-  Future<Localized> load(Locale locale) =>
-      SynchronousFuture<Localized>(Localized(locale));
+  Future<Localized> load(Locale locale) {
+    SuperLocalized.load(locale);
+
+    return SynchronousFuture<Localized>(Localized(locale));
+  }
 
   @override
   bool shouldReload(DemoLocalizationsDelegate old) => false;
