@@ -9,11 +9,7 @@ TODO:
 * Multiple environments
 * Use localized text
 * Mock server
-
-* Infinite scroll list view
 * Firebase (analytics, push messages, crash reports)
-* Logs
-* Facebook and Google login
 * Unit tests
 * End-to-End tests
 
