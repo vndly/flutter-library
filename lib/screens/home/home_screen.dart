@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/screens/home/home_item.dart';
 import 'package:flutter_library/screens/misc/event/event_screen.dart';
 import 'package:flutter_library/screens/misc/http/http_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
@@ -25,7 +26,6 @@ import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
 import 'package:flutter_library/screens/ui/tabs/tabs_screen.dart';
 import 'package:flutter_library/screens/ui/toast/toast_screen.dart';
-import 'home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildHomeItem(BuildContext context, int index) {
-    HomeItem item = items[index];
+    var item = items[index];
 
     if (item.isHeader) {
       return Container(

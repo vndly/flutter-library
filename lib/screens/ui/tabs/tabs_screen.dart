@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tabs_up_screen.dart';
+import 'package:flutter_library/screens/ui/tabs/tabs_up_screen.dart';
 
 class TabsScreen extends StatelessWidget {
   @override

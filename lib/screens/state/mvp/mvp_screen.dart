@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'mvp_view.dart';
+import 'package:flutter_library/screens/state/mvp/mvp_view.dart';
 
 class MvpScreen extends StatefulWidget {
   final String title;

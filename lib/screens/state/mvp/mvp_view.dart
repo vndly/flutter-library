@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'mvp_screen.dart';
+import 'package:flutter_library/screens/state/mvp/mvp_screen.dart';
 
 class MvpView extends StatelessWidget
 {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MediaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    MediaQueryData data = MediaQuery.of(context);
+    var data = MediaQuery.of(context);
 
     return Scaffold(
       appBar: AppBar(

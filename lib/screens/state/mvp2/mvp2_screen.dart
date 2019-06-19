@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'mvp2_model.dart';
-import 'mvp2_state.dart';
-import 'mvp2_view.dart';
+import 'package:flutter_library/screens/state/mvp2/mvp2_model.dart';
+import 'package:flutter_library/screens/state/mvp2/mvp2_state.dart';
+import 'package:flutter_library/screens/state/mvp2/mvp2_view.dart';
 
 class Mvp2Screen extends StatefulWidget {
   final String title;

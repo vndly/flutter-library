@@ -1,5 +1,5 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'dart:convert' as Json;
 import 'package:http/http.dart';
 import 'package:dafluta/dafluta.dart';
 
@@ -95,7 +95,7 @@ class Dog {
   Dog(this.url);
 
   static Dog json(String json) {
-    var data = Json.jsonDecode(json);
+    var data = jsonDecode(json);
 
     return Dog(data['message']);
   }

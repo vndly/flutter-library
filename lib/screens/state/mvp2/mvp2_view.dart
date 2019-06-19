@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'mvp2_model.dart';
-import 'mvp2_screen.dart';
-import 'mvp2_state.dart';
+import 'package:flutter_library/screens/state/mvp2/mvp2_model.dart';
+import 'package:flutter_library/screens/state/mvp2/mvp2_screen.dart';
+import 'package:flutter_library/screens/state/mvp2/mvp2_state.dart';
 
 class Mvp2View extends ExtraView<Mvp2Model, Mvp2State> {
   @override

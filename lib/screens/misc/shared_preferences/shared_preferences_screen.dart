@@ -1,40 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_library/screens/misc/shared_preferences/shared_preferences_normal_screen.dart';
+import 'package:flutter_library/screens/misc/shared_preferences/shared_preferences_secure_screen.dart';
 
-class SharedPreferencesScreen extends StatefulWidget {
-  @override
-  _SharedPreferencesScreenState createState() =>
-      _SharedPreferencesScreenState();
-}
-
-class _SharedPreferencesScreenState extends State<SharedPreferencesScreen> {
-  int _counter = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    loadCounter();
-  }
-
-  void loadCounter() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    _counter = preferences.getInt('counter') ?? 0;
-
-    setState(() {});
-  }
-
-  void saveCounter(int counter) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setInt('counter', counter);
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-      saveCounter(_counter);
-    });
-  }
-
+class SharedPreferencesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -44,20 +12,17 @@ class _SharedPreferencesScreenState extends State<SharedPreferencesScreen> {
       body: new Center(
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'You have pushed the button this many times:',
+          children: [
+            RaisedButton(
+              child: Text('Normal'),
+              onPressed: () => Navigator.of(context).push(SharedPreferencesNormalScreen.instance()),
             ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            RaisedButton(
+              child: Text('Encrypted'),
+              onPressed: () => Navigator.of(context).push(SharedPreferencesSecureScreen.instance()),
             ),
           ],
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
-        child: new Icon(Icons.add),
       ),
     );
   }

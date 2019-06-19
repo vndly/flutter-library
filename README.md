@@ -8,10 +8,11 @@ TODO:
 
 * Multiple environments
 * Use localized text
+* Mock server
+
 * Infinite scroll list view
 * Firebase (analytics, push messages, crash reports)
 * Logs
-* Shared preferences (encrypted)
 * Database
 * Date and number formatters
 * Facebook and Google login
@@ -23,7 +24,8 @@ Guidelines:
 * Use single quote instead of double quote
 * Use [] instead of <Widget>[]
 * Use => notation for a single line function
-* Use 'var' when declaring variables in method
+* Use 'var' when declaring variables in methods
+* Use imports with 'package:...' instead of relative paths
 
 Sanitizer:
 * "

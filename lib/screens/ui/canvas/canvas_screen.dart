@@ -58,8 +58,8 @@ class OpenPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Offset center = size.center(Offset.zero);
-    double radius = size.width / 8;
+    var center = size.center(Offset.zero);
+    var radius = size.width / 8;
 
     canvas.transform(_matrix.storage);
 
@@ -83,13 +83,15 @@ class OpenPainter extends CustomPainter {
 
   @override
   bool hitTest(Offset position) {
-    Offset point = offsetTransformed(_matrix, position);
+    var point = offsetTransformed(_matrix, position);
     print('hit: $point');
+
     return false;
   }
 
   Offset offsetTransformed(Matrix4 transform, Offset point) {
-    Matrix4 inverse = Matrix4.tryInvert(transform);
+    var inverse = Matrix4.tryInvert(transform);
+    
     if (inverse == null) {
       return point;
     } else {
