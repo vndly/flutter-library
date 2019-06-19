@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/screens/misc/navigation/navigation_screen_alone.dart';
 
 class NavigationScreenParams extends StatelessWidget {
   final String value;
@@ -23,9 +24,18 @@ class NavigationScreenParams extends StatelessWidget {
           title: Text(this.value),
         ),
         body: Center(
-          child: RaisedButton(
-            onPressed: () => Navigator.of(context).pop('Bye!'),
-            child: Text('Go back'),
+          child: Column(
+            children: [
+              RaisedButton(
+                onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                    NavigationScreenAlone.instance(), (route) => false),
+                child: Text('Push and remove all'),
+              ),
+              RaisedButton(
+                onPressed: () => Navigator.of(context).pop('Bye!'),
+                child: Text('Go back'),
+              ),
+            ],
           ),
         ),
       ),

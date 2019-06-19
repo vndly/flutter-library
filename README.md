@@ -6,24 +6,8 @@ TODO:
     - Redux
     - RxDart
 
-Create SuperStateWidget
-SperStateWidget(
-    state: MySuperState(...)
-    builder: (context, model, events)
-)
-
-class MySuperState extends SuperState {}
-
-class SuperStateWidget<S extends SuperState>
-{
-    final S state;
-
-    state.setParent(this);
-}
-
 * Multiple environments
 * Use localized text
-* Navigate to a new screen and destroy all the others behind
 * Infinite scroll list view
 * Firebase (analytics, push messages, crash reports)
 * Logs
