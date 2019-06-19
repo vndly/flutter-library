@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/home/home_screen.dart';
+import 'package:flutter_library/screens/misc/localization/localization_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
@@ -28,12 +29,11 @@ class MyApp extends StatelessWidget {
         ],
       ),
       localizationsDelegates: [
+        const DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: [
-        const Locale('en'),
-      ],
+      supportedLocales: Localized.locales(),
     );
   }
 }

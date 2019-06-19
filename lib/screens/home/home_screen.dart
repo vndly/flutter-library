@@ -3,6 +3,7 @@ import 'package:flutter_library/screens/home/home_item.dart';
 import 'package:flutter_library/screens/misc/dates/dates_screen.dart';
 import 'package:flutter_library/screens/misc/event/event_screen.dart';
 import 'package:flutter_library/screens/misc/http/http_screen.dart';
+import 'package:flutter_library/screens/misc/localization/localization_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
 import 'package:flutter_library/screens/misc/navigation/navigation_screen.dart';
 import 'package:flutter_library/screens/misc/orientation/orientation_screen.dart';
@@ -58,6 +59,7 @@ class HomeScreen extends StatelessWidget {
 
     // misc
     HomeItem('Misc'),
+    HomeItem('Localization', (context) => LocalizationScreen()),
     HomeItem('Dates', (context) => DatesScreen()),
     HomeItem('Shared Preferences', (context) => SharedPreferencesScreen()),
     HomeItem('HTTP', (context) => HttpScreen()),
@@ -104,7 +106,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Items'),
+        title: Text('Flutter Library'),
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) => Divider(),

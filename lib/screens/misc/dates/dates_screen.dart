@@ -4,6 +4,7 @@ class DatesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
+    MaterialLocalizations.of(context).backButtonTooltip;
 
     return Scaffold(
       appBar: AppBar(
