@@ -13,8 +13,6 @@ TODO:
 * Infinite scroll list view
 * Firebase (analytics, push messages, crash reports)
 * Logs
-* Database
-* Date and number formatters
 * Facebook and Google login
 * Unit tests
 * End-to-End tests

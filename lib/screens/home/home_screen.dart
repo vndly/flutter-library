@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/home/home_item.dart';
+import 'package:flutter_library/screens/misc/dates/dates_screen.dart';
 import 'package:flutter_library/screens/misc/event/event_screen.dart';
 import 'package:flutter_library/screens/misc/http/http_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
@@ -57,6 +58,7 @@ class HomeScreen extends StatelessWidget {
 
     // misc
     HomeItem('Misc'),
+    HomeItem('Dates', (context) => DatesScreen()),
     HomeItem('Shared Preferences', (context) => SharedPreferencesScreen()),
     HomeItem('HTTP', (context) => HttpScreen()),
     HomeItem('Event', (context) => EventScreen()),
