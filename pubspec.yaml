@@ -3,7 +3,7 @@ description: A Flutter library
 version: 1.0.0
 
 environment:
-  sdk: ^2.1.0
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
 
@@ -23,7 +23,7 @@ dependencies:
   flutter_secure_storage: ^3.2.1+1
   event_taxi: ^0.1.5
   http: ^0.12.0+2
-  dafluta: ^0.0.5
+  dafluta: ^1.0.0
 
 dev_dependencies:
 

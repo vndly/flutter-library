@@ -70,7 +70,7 @@ packages:
       name: dafluta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.5"
+    version: "1.0.0"
   event_taxi:
     dependency: "direct main"
     description:
