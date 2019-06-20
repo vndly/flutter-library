@@ -27,9 +27,8 @@ class LocalizationScreen extends StatelessWidget {
 class Localized {
   static BaseLocalized text;
 
-  static List<Locale> locales() {
-    return localized.keys.map((l) => Locale(l)).toList();
-  }
+  static List<Locale> locales() =>
+      localized.keys.map((l) => Locale(l)).toList();
 
   static Map<String, BaseLocalized> localized = {
     'en': EnglishLocalized(),
@@ -81,27 +80,7 @@ class BaseLocalized {
   String minutes(num value) => '';
 }
 
-class BasicLocalized {
-  final Locale _locale;
-
-  BasicLocalized(this._locale);
-
-  /*static BasicLocalized of(BuildContext context) =>
-      Localizations.of<BasicLocalized>(context, BasicLocalized);
-
-  static Map<String, Map<String, String>> _localizedValues = {
-    'en': {
-      'title': 'Hello World',
-    },
-    'es': {
-      'title': 'Hola Mundo',
-    },
-  };
-
-  String get title => _localizedValues[_locale.languageCode]['title'];*/
-}
-
-class DemoLocalizationsDelegate extends LocalizationsDelegate<BasicLocalized> {
+class DemoLocalizationsDelegate extends LocalizationsDelegate {
   const DemoLocalizationsDelegate();
 
   @override
@@ -110,10 +89,10 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<BasicLocalized> {
       .contains(locale.languageCode);
 
   @override
-  Future<BasicLocalized> load(Locale locale) {
+  Future load(Locale locale) {
     Localized.load(locale);
 
-    return SynchronousFuture<BasicLocalized>(BasicLocalized(locale));
+    return SynchronousFuture(Object());
   }
 
   @override
