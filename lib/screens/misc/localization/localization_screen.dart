@@ -27,8 +27,7 @@ class LocalizationScreen extends StatelessWidget {
 class Localized {
   static BaseLocalized text;
 
-  static List<Locale> locales() =>
-      localized.keys.map((l) => Locale(l)).toList();
+  static List<Locale> locales = localized.keys.map((l) => Locale(l)).toList();
 
   static Map<String, BaseLocalized> localized = {
     'en': EnglishLocalized(),
@@ -84,7 +83,7 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate {
   const DemoLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => Localized.locales()
+  bool isSupported(Locale locale) => Localized.locales
       .map((l) => l.languageCode)
       .contains(locale.languageCode);
 
