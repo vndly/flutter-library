@@ -7,11 +7,14 @@ TODO:
     - RxDart
 
 * Multiple environments
-* Use localized text
 * Mock server
+    - https://pub.dev/packages/mock_web_server
+    - https://pub.dev/packages/jaguar
+    
 * Firebase (analytics, push messages, crash reports)
 * Unit tests
 * End-to-End tests
+* Use localized text
 
 Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible
