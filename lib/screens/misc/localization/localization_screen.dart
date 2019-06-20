@@ -12,12 +12,11 @@ class LocalizationScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(Localized.of(context).title),
-            Text(SuperLocalized.title),
-            Text(SuperLocalized.message('Yo!')),
-            Text(SuperLocalized.minutes(0)),
-            Text(SuperLocalized.minutes(1)),
-            Text(SuperLocalized.minutes(3)),
+            Text(Localized.text.title),
+            Text(Localized.text.message('Yo!')),
+            Text(Localized.text.minutes(0)),
+            Text(Localized.text.minutes(1)),
+            Text(Localized.text.minutes(3)),
           ],
         ),
       ),
@@ -25,52 +24,70 @@ class LocalizationScreen extends StatelessWidget {
   }
 }
 
-class SuperLocalized {
-  static String title = '';
-  static Function message = (String value) => '';
-  static Function minutes = (num value) => '';
+class Localized {
+  static BaseLocalized text;
+
+  static List<Locale> locales() {
+    return localized.keys.map((l) => Locale(l)).toList();
+  }
+
+  static Map<String, BaseLocalized> localized = {
+    'en': EnglishLocalized(),
+    'es': SpanishLocalized()
+  };
 
   static void load(Locale locale) {
-    if (locale.languageCode == 'es') {
-      SuperLocalized.title = 'El titulazo';
-      SuperLocalized.message = (String value) => 'El mesajazo: $value';
-      SuperLocalized.minutes = (num value) {
-        if (value == 0) {
-          return 'Sin minutos';
-        } else if (value == 1) {
-          return '1 minuto';
-        } else {
-          return '$value minutazos';
-        }
-      };
-    } else if (locale.languageCode == 'en') {
-      SuperLocalized.title = 'Da title';
-      SuperLocalized.message = (String value) => 'Da message: $value';
-      SuperLocalized.minutes = (num value) {
-        if (value == 0) {
-          return 'No minutes';
-        } else if (value == 1) {
-          return '1 minute';
-        } else {
-          return '$value minutes';
-        }
-      };
+    text = localized[locale.languageCode] ?? EnglishLocalized();
+  }
+}
+
+class EnglishLocalized extends BaseLocalized {
+  String title = 'Da title';
+
+  String message(String value) => 'Da message: $value';
+
+  String minutes(num value) {
+    if (value == 0) {
+      return 'No minutes';
+    } else if (value == 1) {
+      return '1 minute';
+    } else {
+      return '$value minutes';
     }
   }
 }
 
-class Localized {
+class SpanishLocalized extends BaseLocalized {
+  String title = 'El titulazo';
+
+  String message(String value) => 'El mesajazo: $value';
+
+  String minutes(num value) {
+    if (value == 0) {
+      return 'Sin minutos';
+    } else if (value == 1) {
+      return '1 minuto';
+    } else {
+      return '$value minutazos';
+    }
+  }
+}
+
+class BaseLocalized {
+  String title = '';
+
+  String message(String value) => '';
+
+  String minutes(num value) => '';
+}
+
+class BasicLocalized {
   final Locale _locale;
 
-  Localized(this._locale);
+  BasicLocalized(this._locale);
 
-  static List<Locale> locales() => [
-        const Locale('en'),
-        const Locale('es'),
-      ];
-
-  static Localized of(BuildContext context) =>
-      Localizations.of<Localized>(context, Localized);
+  /*static BasicLocalized of(BuildContext context) =>
+      Localizations.of<BasicLocalized>(context, BasicLocalized);
 
   static Map<String, Map<String, String>> _localizedValues = {
     'en': {
@@ -81,10 +98,10 @@ class Localized {
     },
   };
 
-  String get title => _localizedValues[_locale.languageCode]['title'];
+  String get title => _localizedValues[_locale.languageCode]['title'];*/
 }
 
-class DemoLocalizationsDelegate extends LocalizationsDelegate<Localized> {
+class DemoLocalizationsDelegate extends LocalizationsDelegate<BasicLocalized> {
   const DemoLocalizationsDelegate();
 
   @override
@@ -93,10 +110,10 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<Localized> {
       .contains(locale.languageCode);
 
   @override
-  Future<Localized> load(Locale locale) {
-    SuperLocalized.load(locale);
+  Future<BasicLocalized> load(Locale locale) {
+    Localized.load(locale);
 
-    return SynchronousFuture<Localized>(Localized(locale));
+    return SynchronousFuture<BasicLocalized>(BasicLocalized(locale));
   }
 
   @override
