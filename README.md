@@ -11,7 +11,6 @@ TODO:
     - https://pub.dev/packages/mock_web_server
     - https://pub.dev/packages/jaguar
 
-* Open/close keyboard
 * Improve RichText creation
 * Intents:
     - share link
@@ -29,7 +28,6 @@ TODO:
     - url econding
     - sha256
     - sha512
-* Parse enum
 * Json:
     - pretty print
     - object to json
