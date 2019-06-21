@@ -36,7 +36,6 @@ TODO:
 * Firebase (analytics, push messages, crash reports)
 * Unit tests
 * End-to-End tests
-* Use localized text
 
 Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible
