@@ -23,7 +23,7 @@ dependencies:
   flutter_secure_storage: ^3.2.1+1
   event_taxi: ^0.1.5
   http: ^0.12.0+2
-  dafluta: ^1.0.0
+  dafluta: ^1.1.0
 
 dev_dependencies:
 

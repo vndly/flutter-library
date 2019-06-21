@@ -1,0 +1,4 @@
+{
+    "title": "El titulazo",
+    "message": "El mesajazo: ${value}"
+}

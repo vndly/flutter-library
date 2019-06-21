@@ -10,7 +10,29 @@ TODO:
 * Mock server
     - https://pub.dev/packages/mock_web_server
     - https://pub.dev/packages/jaguar
-    
+
+* Open/close keyboard
+* Improve RichText creation
+* Intents:
+    - share link
+    - share file
+    - send email
+    - call number
+    - take picture
+    - select file
+    - open file
+    - open addres
+    - open app in store
+    - open web page
+* Encoding:
+    - base 64
+    - url econding
+    - sha256
+    - sha512
+* Parse enum
+* Json:
+    - pretty print
+    - object to json
 * Firebase (analytics, push messages, crash reports)
 * Unit tests
 * End-to-End tests
