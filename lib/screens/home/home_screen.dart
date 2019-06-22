@@ -3,6 +3,7 @@ import 'package:flutter_library/screens/home/home_item.dart';
 import 'package:flutter_library/screens/misc/dates/dates_screen.dart';
 import 'package:flutter_library/screens/misc/event/event_screen.dart';
 import 'package:flutter_library/screens/misc/http/http_screen.dart';
+import 'package:flutter_library/screens/misc/json/json_screen.dart';
 import 'package:flutter_library/screens/misc/localization/localization_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
 import 'package:flutter_library/screens/misc/navigation/navigation_screen.dart';
@@ -61,6 +62,7 @@ class HomeScreen extends StatelessWidget {
 
     // misc
     HomeItem('Misc'),
+    HomeItem('Json', (context) => JsonScreen()),
     HomeItem('Localization', (context) => LocalizationScreen()),
     HomeItem('Dates', (context) => DatesScreen()),
     HomeItem('Shared Preferences', (context) => SharedPreferencesScreen()),
