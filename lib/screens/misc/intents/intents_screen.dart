@@ -1,3 +1,5 @@
+import 'package:open_file/open_file.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:share/share.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -37,6 +39,14 @@ class IntentsScreen extends StatelessWidget {
               onPressed: _onOpenPlayStore,
               child: Text('Open Play Store'),
             ),
+            RaisedButton(
+              onPressed: _onTakePicture,
+              child: Text('Take picture'),
+            ),
+            RaisedButton(
+              onPressed: _onSelectFile,
+              child: Text('Select file'),
+            ),
           ],
         ),
       ),
@@ -67,6 +77,16 @@ class IntentsScreen extends StatelessWidget {
 
   void _onOpenPlayStore() async {
     _tryLaunch('market://details?id=io.flutter.demo.gallery');
+  }
+
+  void _onTakePicture() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+    OpenFile.open(image.path);
+  }
+
+  void _onSelectFile() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    OpenFile.open(image.path);
   }
 
   void _tryLaunch(String url) async {

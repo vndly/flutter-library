@@ -12,10 +12,6 @@ TODO:
     - https://pub.dev/packages/jaguar
 
 * Improve RichText creation
-* Intents:
-    - take picture
-    - select file
-    - open file
 * Encoding:
     - base 64
     - url econding
