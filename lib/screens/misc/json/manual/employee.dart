@@ -18,6 +18,7 @@ class Employee {
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> map = Map();
+    
     if (name != null) {
       map['name'] = name;
     }

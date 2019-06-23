@@ -11,22 +11,7 @@ TODO:
     - https://pub.dev/packages/mock_web_server
     - https://pub.dev/packages/jaguar
 
-* Enums (new and old)
-```dart
-class Fruit {
-  static const APPLE = const Fruit._(0);
-  static const BANANA = const Fruit._(1);
-
-  static get values => [APPLE, BANANA];
-
-  final int value;
-
-  const Fruit._(this.value);
-}
-```
-
 * Logs (https://flutter.dev/docs/testing/debugging)
-
 * Improve RichText creation
 * Intents:
     - share link
