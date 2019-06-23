@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/environments.dart';
 import 'package:flutter_library/screens/home/home_item.dart';
 import 'package:flutter_library/screens/misc/dates/dates_screen.dart';
 import 'package:flutter_library/screens/misc/encoding/encoding_screen.dart';
@@ -33,6 +34,7 @@ import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
 import 'package:flutter_library/screens/ui/tabs/tabs_screen.dart';
 import 'package:flutter_library/screens/ui/toast/toast_screen.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
@@ -114,9 +116,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Environment environment = Provider.of<Environment>(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Library'),
+        title: Text('Flutter Library : ${environment.path}'),
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) => Divider(),

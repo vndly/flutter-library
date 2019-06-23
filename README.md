@@ -6,7 +6,6 @@ TODO:
     - Redux
     - RxDart
 
-* Multiple environments
 * Mock server
     - https://pub.dev/packages/mock_web_server
     - https://pub.dev/packages/jaguar
