@@ -11,14 +11,19 @@ TODO:
     - https://pub.dev/packages/jaguar
 
 * Improve RichText creation
-* Lottie
-* Firebase (analytics, push messages, crash reports)
 * Unit tests
 * End-to-End tests
 * print(..) and `flutter logs`
 
+* Firebase
+https://firebase.google.com/docs/flutter/setup
+https://github.com/flutter/plugins/blob/master/FlutterFire.md
+https://codelabs.developers.google.com/codelabs/flutter-firebase
+
 * Flavors:
 https://medium.com/@salvatoregiordanoo/flavoring-flutter-392aaa875f36
+https://cogitas.net/creating-flavors-of-a-flutter-app/
+https://medium.com/flutter-community/flutter-ready-to-go-e59873f9d7de
 
 * Dropdown:
 https://github.com/nisrulz/flutter-examples/tree/master/dropdown_button
@@ -57,6 +62,9 @@ https://github.com/tiagojencmartins/unicornspeeddial
 
 * Page view indicator:
 https://github.com/leocavalcante/page_view_indicator
+
+* Build:
+https://flutter.dev/docs/deployment/android
 
 Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible
