@@ -24,7 +24,8 @@ dependencies:
   json_annotation: ^2.0.0
   event_taxi: ^0.1.5
   http: ^0.12.0+2
-  dafluta: ^1.3.0
+  dafluta: ^1.4.0
+  dahttp: ^1.2.0
   dalocale: ^1.2.1
 
 dev_dependencies:

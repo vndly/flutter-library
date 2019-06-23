@@ -1,7 +1,7 @@
 import 'dart:convert';
+import 'package:dahttp/dahttp.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:dafluta/dafluta.dart';
 
 class HttpScreen extends StatefulWidget {
   @override
@@ -75,10 +75,10 @@ class _HttpScreenState extends State<HttpScreen> {
 
 enum Status { init, loading, content, error }
 
-class GetDog extends ValueEndPoint<Dog> {
+class GetDog extends ValueHttp<Dog> {
   static const String URL = 'https://dog.ceo/api/breeds/image/random';
 
-  Future<EndPointResult<Dog>> call() {
+  Future<HttpResult<Dog>> call() {
     return super.get(URL);
   }
 
