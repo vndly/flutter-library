@@ -2,17 +2,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 class BaseLocalized {
-  String title = '';
+  final String title = '';
   String message(String value) => '';
 }
 
 class ENLocalized extends BaseLocalized {
-  String title = 'Da title';
+  final String title = 'Da title';
   String message(String value) => 'Da message: $value';
 }
 
 class ESLocalized extends BaseLocalized {
-  String title = 'El titulazo';
+  final String title = 'El titulazo';
   String message(String value) => 'El mesajazo: $value';
 }
 
