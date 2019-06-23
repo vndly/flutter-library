@@ -16,8 +16,8 @@ class LocalizationScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(Localized.text.title),
-            Text(Localized.text.message('Yo!')),
+            Text(Localized.get.title),
+            Text(Localized.get.message('Yo!')),
             RaisedButton(
               child: Text('English'),
               onPressed: () => state.changeLocale(Locale('en')),

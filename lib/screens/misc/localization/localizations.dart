@@ -17,7 +17,7 @@ class ESLocalized extends BaseLocalized {
 }
 
 class Localized {
-  static BaseLocalized text;
+  static BaseLocalized get;
 
   static List<Locale> locales = localized.keys.map((l) => Locale(l)).toList();
 
@@ -27,7 +27,7 @@ class Localized {
   };
 
   static void load(Locale locale) {
-    text = localized[locale.languageCode];
+    get = localized[locale.languageCode];
   }
 }
 
