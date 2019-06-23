@@ -44,9 +44,6 @@ class Fruit {
     - url econding
     - sha256
     - sha512
-* Json:
-    - pretty print
-    - object to json
 * Lottie
 * Firebase (analytics, push messages, crash reports)
 * Unit tests
