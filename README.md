@@ -12,11 +12,6 @@ TODO:
     - https://pub.dev/packages/jaguar
 
 * Improve RichText creation
-* Encoding:
-    - base 64
-    - url econding
-    - sha256
-    - sha512
 * Lottie
 * Firebase (analytics, push messages, crash reports)
 * Unit tests
