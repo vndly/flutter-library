@@ -15,10 +15,13 @@ TODO:
 * End-to-End tests
 * print(..) and `flutter logs`
 
-* Firebase
+* Firebase:
 https://firebase.google.com/docs/flutter/setup
 https://github.com/flutter/plugins/blob/master/FlutterFire.md
 https://codelabs.developers.google.com/codelabs/flutter-firebase
+
+* Toast:
+https://pub.dev/packages/fluttertoast
 
 * Flavors:
 https://medium.com/@salvatoregiordanoo/flavoring-flutter-392aaa875f36
@@ -31,6 +34,9 @@ https://github.com/nisrulz/flutter-examples/tree/master/dropdown_button
 * Infinite Listview:
 https://github.com/nisrulz/flutter-examples/tree/master/infinite_list
 https://github.com/fluttercommunity/flutter_infinite_listview
+
+* Scroll to refresh:
+https://medium.com/flutterpub/adding-swipe-to-refresh-to-flutter-app-b234534f39a7
 
 * Sticky Header:
 https://github.com/letsar/flutter_sticky_header
@@ -65,6 +71,7 @@ https://github.com/leocavalcante/page_view_indicator
 
 * Build:
 https://flutter.dev/docs/deployment/android
+https://codemagic.io
 
 Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible
