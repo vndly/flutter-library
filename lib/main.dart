@@ -6,17 +6,20 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(DevEnvironment()));
 }
 
 class MyApp extends StatelessWidget {
   final AppState state = AppState();
+  final Environment environment;
+
+  MyApp(this.environment);
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<Environment>.value(value: DevEnvironment()),
+        Provider<Environment>.value(value: environment),
       ],
       child: ChangeNotifierProvider(
         builder: (context) => state,
