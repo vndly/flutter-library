@@ -4,6 +4,7 @@ import 'package:flutter_library/screens/misc/dates/dates_screen.dart';
 import 'package:flutter_library/screens/misc/enums/enums_screen.dart';
 import 'package:flutter_library/screens/misc/event/event_screen.dart';
 import 'package:flutter_library/screens/misc/http/http_screen.dart';
+import 'package:flutter_library/screens/misc/intents/intents_screen.dart';
 import 'package:flutter_library/screens/misc/json/json_screen.dart';
 import 'package:flutter_library/screens/misc/localization/localization_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
@@ -63,6 +64,7 @@ class HomeScreen extends StatelessWidget {
 
     // misc
     HomeItem('Misc'),
+    HomeItem('Intents', (context) => IntentsScreen()),
     HomeItem('Enums', (context) => EnumsScreen()),
     HomeItem('Json', (context) => JsonScreen()),
     HomeItem('Localization', (context) => LocalizationScreen()),

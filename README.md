@@ -11,19 +11,11 @@ TODO:
     - https://pub.dev/packages/mock_web_server
     - https://pub.dev/packages/jaguar
 
-* Logs (https://flutter.dev/docs/testing/debugging)
 * Improve RichText creation
 * Intents:
-    - share link
-    - share file
-    - send email
-    - call number
     - take picture
     - select file
     - open file
-    - open addres
-    - open app in store
-    - open web page
 * Encoding:
     - base 64
     - url econding

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:dafluta/dafluta.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/misc/json/automatic/person.dart';
