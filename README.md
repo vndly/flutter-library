@@ -42,9 +42,6 @@ https://github.com/fluttercommunity/flutter_sticky_headers
 * Row menu:
 https://github.com/letsar/flutter_slidable
 
-* Lottie:
-https://github.com/CameronStuartSmith/flutter_lottie
-
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
 
