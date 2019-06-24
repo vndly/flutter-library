@@ -45,12 +45,6 @@ https://github.com/letsar/flutter_slidable
 * Lottie:
 https://github.com/CameronStuartSmith/flutter_lottie
 
-* WebView:
-https://github.com/fluttercommunity/flutter_webview_plugin
-
-* InApp Browser:
-https://github.com/pichillilorenzo/flutter_inappbrowser
-
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
 

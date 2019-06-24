@@ -35,6 +35,7 @@ import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
 import 'package:flutter_library/screens/ui/snack/snack_screen.dart';
 import 'package:flutter_library/screens/ui/tabs/tabs_screen.dart';
 import 'package:flutter_library/screens/ui/toast/toast_screen.dart';
+import 'package:flutter_library/screens/ui/web/web_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -49,6 +50,7 @@ class HomeScreen extends StatelessWidget {
 
     // ui
     HomeItem('UI'),
+    HomeItem('Web', (context) => WebScreen()),
     HomeItem('Toast', (context) => ToastScreen()),
     HomeItem('Snack', (context) => SnackScreen()),
     HomeItem('Rich Text', (context) => RichTextScreen()),

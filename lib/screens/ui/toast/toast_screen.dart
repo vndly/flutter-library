@@ -19,13 +19,11 @@ class ToastScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Toast'),
       ),
-      body: Builder(
-        builder: (context) => Center(
-              child: RaisedButton(
-                onPressed: () => showToast(context),
-                child: Text('Show toast'),
-              ),
-            ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () => showToast(context),
+          child: Text('Show toast'),
+        ),
       ),
     );
   }
