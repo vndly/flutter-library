@@ -48,9 +48,6 @@ https://github.com/CameronStuartSmith/flutter_lottie
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
 
-* Version:
-https://github.com/fluttercommunity/get_version
-
 * Photo view:
 https://github.com/renancaraujo/photo_view
 
