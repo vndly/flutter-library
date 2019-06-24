@@ -32,6 +32,7 @@ import 'package:flutter_library/screens/ui/page_view/page_view_screen.dart';
 import 'package:flutter_library/screens/ui/rich_text/rich_text_screen.dart';
 import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
+import 'package:flutter_library/screens/ui/snack/snack_screen.dart';
 import 'package:flutter_library/screens/ui/tabs/tabs_screen.dart';
 import 'package:flutter_library/screens/ui/toast/toast_screen.dart';
 import 'package:provider/provider.dart';
@@ -48,6 +49,8 @@ class HomeScreen extends StatelessWidget {
 
     // ui
     HomeItem('UI'),
+    HomeItem('Toast', (context) => ToastScreen()),
+    HomeItem('Snack', (context) => SnackScreen()),
     HomeItem('Rich Text', (context) => RichTextScreen()),
     HomeItem('Bottom Bar', (context) => BottomBarScreen()),
     HomeItem('Image', (context) => ImageScreen()),
@@ -55,7 +58,6 @@ class HomeScreen extends StatelessWidget {
     HomeItem('Icon', (context) => IconScreen()),
     HomeItem('Canvas', (context) => CanvasScreen()),
     HomeItem('Dialog', (context) => DialogScreen()),
-    HomeItem('Toast', (context) => ToastScreen()),
     HomeItem('Drawer', (context) => DrawerScreen()),
     HomeItem('Tabs', (context) => TabsScreen()),
     HomeItem('Alert', (context) => AlertScreen()),

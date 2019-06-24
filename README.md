@@ -20,9 +20,6 @@ https://firebase.google.com/docs/flutter/setup
 https://github.com/flutter/plugins/blob/master/FlutterFire.md
 https://codelabs.developers.google.com/codelabs/flutter-firebase
 
-* Toast:
-https://pub.dev/packages/fluttertoast
-
 * Flavors:
 https://medium.com/@salvatoregiordanoo/flavoring-flutter-392aaa875f36
 https://cogitas.net/creating-flavors-of-a-flutter-app/
