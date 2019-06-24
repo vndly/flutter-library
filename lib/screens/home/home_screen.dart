@@ -92,6 +92,7 @@ class HomeScreen extends StatelessWidget {
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
+    print(item.name);
     Navigator.push(
       context,
       MaterialPageRoute(builder: item.builder),

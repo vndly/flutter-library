@@ -29,8 +29,7 @@ class LottieScreen extends StatelessWidget {
 
   void _onViewCreated(LottieController controller) {
     controller.onPlayFinished.listen((bool animationFinished) {
-      print("Playback complete. Was Animation Finished? " +
-          animationFinished.toString());
+      print('Playback complete. Was Animation Finished? $animationFinished');
     });
   }
 }

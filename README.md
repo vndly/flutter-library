@@ -13,7 +13,6 @@ TODO:
 * Improve RichText creation
 * Unit tests
 * End-to-End tests
-* print(..) and `flutter logs`
 
 * Firebase:
 https://firebase.google.com/docs/flutter/setup
