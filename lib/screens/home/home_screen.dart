@@ -25,6 +25,7 @@ import 'package:flutter_library/screens/ui/bottom_bar/bottom_bar_screen.dart';
 import 'package:flutter_library/screens/ui/canvas/canvas_screen.dart';
 import 'package:flutter_library/screens/ui/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/ui/drawer/drawer_screen.dart';
+import 'package:flutter_library/screens/ui/dropdown/dropdown_screen.dart';
 import 'package:flutter_library/screens/ui/font/font_screen.dart';
 import 'package:flutter_library/screens/ui/form/form_screen.dart';
 import 'package:flutter_library/screens/ui/icon/icon_screen.dart';
@@ -52,6 +53,7 @@ class HomeScreen extends StatelessWidget {
 
     // ui
     HomeItem('UI'),
+    HomeItem('Dropdown', (context) => DropdownScreen()),
     HomeItem('Lottie', (context) => LottieScreen()),
     HomeItem('Web', (context) => WebScreen()),
     HomeItem('Toast', (context) => ToastScreen()),

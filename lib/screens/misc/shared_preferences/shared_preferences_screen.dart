@@ -5,21 +5,23 @@ import 'package:flutter_library/screens/misc/shared_preferences/shared_preferenc
 class SharedPreferencesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Shared Preferences'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Shared Preferences'),
       ),
-      body: new Center(
-        child: new Column(
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
               child: Text('Normal'),
-              onPressed: () => Navigator.of(context).push(SharedPreferencesNormalScreen.instance()),
+              onPressed: () => Navigator.of(context)
+                  .push(SharedPreferencesNormalScreen.instance()),
             ),
             RaisedButton(
               child: Text('Encrypted'),
-              onPressed: () => Navigator.of(context).push(SharedPreferencesSecureScreen.instance()),
+              onPressed: () => Navigator.of(context)
+                  .push(SharedPreferencesSecureScreen.instance()),
             ),
           ],
         ),

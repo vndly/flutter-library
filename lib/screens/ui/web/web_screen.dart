@@ -12,7 +12,7 @@ class WebScreen extends StatelessWidget {
   }
 
   void showInAppBrowser(BuildContext context) async {
-    var inAppBrowser = new CustomInAppBrowser();
+    var inAppBrowser = CustomInAppBrowser();
     await inAppBrowser.open(url: "https://flutter.io", options: {
       "useShouldOverrideUrlLoading": true,
       "useOnLoadResource": true
