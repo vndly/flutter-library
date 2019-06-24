@@ -23,7 +23,7 @@ class _HttpScreenState extends State<HttpScreen> {
 
     if (result.isSuccessful) {
       setState(() {
-        _data = result.value.url;
+        _data = result.data.url;
         _state = Status.content;
       });
     } else {
