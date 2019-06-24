@@ -45,7 +45,6 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/launcher/icon.png"
-  # flutter pub run flutter_launcher_icons:main
 
 flutter:
 
