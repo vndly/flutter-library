@@ -35,7 +35,7 @@ class TextCounter extends StatelessWidget {
 class TextCounter2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<ScopedState>(context);
+    var model = Provider.of<ScopedState>(context);
     return Text(
       '${model.data.counter}',
       style: Theme.of(context).textTheme.display1,

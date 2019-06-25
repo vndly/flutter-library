@@ -27,6 +27,7 @@ dependencies:
   flutter_inappbrowser: ^1.2.1
   get_version: ^0.1.0
   flutter_lottie: ^0.2.0
+  get_it: ^1.0.3+1
   event_taxi: ^0.1.5
   image_picker: ^0.6.0+10
   open_file: ^2.0.3

@@ -1,11 +1,6 @@
 # Flutter library
 
 TODO:
-* Examples of state management with:
-    - InheritedWidget
-    - Redux
-    - RxDart
-
 * Mock server
     - https://pub.dev/packages/mock_web_server
     - https://pub.dev/packages/jaguar
