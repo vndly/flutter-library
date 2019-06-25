@@ -1,19 +1,29 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
-class BaseLocalized {
-  final String title = '';
-  String message(String value) => '';
+abstract class BaseLocalized {
+
+  String get title;
+
+  String message(Object value);
 }
 
 class ENLocalized extends BaseLocalized {
-  final String title = 'Da title';
-  String message(String value) => 'Da message: $value';
+
+  @override
+  String get title => 'Da title';
+
+  @override
+  String message(Object value) => 'Da message: ${value.toString()}';
 }
 
 class ESLocalized extends BaseLocalized {
-  final String title = 'El titulazo';
-  String message(String value) => 'El mesajazo: $value';
+
+  @override
+  String get title => 'El titulazo';
+
+  @override
+  String message(Object value) => 'El mesajazo: ${value.toString()}';
 }
 
 class Localized {
