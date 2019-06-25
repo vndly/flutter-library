@@ -1,7 +1,7 @@
 import 'package:flutter_library/environments.dart';
 import 'package:get_it/get_it.dart';
 
-GetIt getIt = new GetIt();
+final GetIt getIt = GetIt();
 
 void setupLocatorDev() {
   getIt.registerSingleton<Environment>(DevEnvironment());
