@@ -9,16 +9,16 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   int _selectedIndex = 0;
 
   final _pages = [
-    PageItem('Home', Colors.red),
-    PageItem('Messages', Colors.green),
-    PageItem('Profile', Colors.blue),
+    const PageItem('Home', Colors.red),
+    const PageItem('Messages', Colors.green),
+    const PageItem('Profile', Colors.blue),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bottom Bar'),
+        title: const Text('Bottom Bar'),
       ),
       body: _page(_pages[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
@@ -27,15 +27,15 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         onTap: _onTabSelected,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             title: Text(_pages[0].title),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
+            icon: const Icon(Icons.mail),
             title: Text(_pages[1].title),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             title: Text(_pages[1].title),
           )
         ],
@@ -69,5 +69,5 @@ class PageItem {
   final String title;
   final Color color;
 
-  PageItem(this.title, this.color);
+  const PageItem(this.title, this.color);
 }

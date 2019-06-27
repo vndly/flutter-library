@@ -7,24 +7,24 @@ class NavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Navigation'),
+        title: const Text('Navigation'),
       ),
       body: Center(
         child: Column(
           children: [
             RaisedButton(
               onPressed: () async {
-                String value = await Navigator.of(context)
+                final value = await Navigator.of(context)
                     .push(NavigationScreenParams.instance('Hello!'));
                 print(value);
               },
-              child: Text('Open with params'),
+              child: const Text('Open with params'),
             ),
             RaisedButton(
               onPressed: () => Navigator.of(context).pushReplacement(
                     NavigationScreenReplaced.instance(),
                   ),
-              child: Text('Open replacing'),
+              child: const Text('Open replacing'),
             ),
           ],
         ),

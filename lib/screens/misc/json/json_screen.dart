@@ -7,7 +7,7 @@ import 'package:flutter_library/screens/misc/json/manual/employee.dart';
 class JsonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var person = Person.fromJson(jsonDecode("""
+    final person = Person.fromJson(jsonDecode('''
         {
           "name": "John Doe",
           "email": "john.doe@email.com",
@@ -28,9 +28,9 @@ class JsonScreen extends StatelessWidget {
             }
           ]
         }
-        """));
+        '''));
 
-    var employee = Employee.fromJson(JsonData("""
+    final employee = Employee.fromJson(JsonData('''
         {
           "name": "John Doe",
           "email": "john.doe@email.com",
@@ -51,11 +51,11 @@ class JsonScreen extends StatelessWidget {
             }
           ]
         }
-        """));
+        '''));
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Json'),
+        title: const Text('Json'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -83,7 +83,7 @@ class JsonScreen extends StatelessWidget {
   }
 
   String prettyPrint(Map<String, dynamic> json) {
-    JsonEncoder encoder = JsonEncoder.withIndent('    ');
+    const encoder = JsonEncoder.withIndent('    ');
 
     return encoder.convert(json);
   }

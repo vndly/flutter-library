@@ -5,17 +5,17 @@ class DrawerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Drawer'),
+        title: const Text('Drawer'),
       ),
       drawer: Drawer(
         child: Column(
           children: [
             AppBar(
               automaticallyImplyLeading: false,
-              title: Text('Title'),
+              title: const Text('Title'),
             ),
             ListTile(
-              title: Text('This is a title'),
+              title: const Text('This is a title'),
               onTap: () {},
             ),
           ],
@@ -23,7 +23,7 @@ class DrawerScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          children: [
+          children: const [
             Text('Hello'),
           ],
         ),

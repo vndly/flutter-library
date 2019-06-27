@@ -11,8 +11,8 @@ class WebScreen extends StatelessWidget {
     );
   }
 
-  void showInAppBrowser(BuildContext context) async {
-    var inAppBrowser = CustomInAppBrowser();
+  Future showInAppBrowser(BuildContext context) async {
+    final inAppBrowser = CustomInAppBrowser();
     await inAppBrowser.open(url: 'https://flutter.io', options: {
       'useShouldOverrideUrlLoading': true,
       'useOnLoadResource': true
@@ -23,18 +23,18 @@ class WebScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Web'),
+        title: const Text('Web'),
       ),
       body: Center(
         child: Column(
           children: [
             RaisedButton(
               onPressed: () => showWebview(context),
-              child: Text('Open webview'),
+              child: const Text('Open webview'),
             ),
             RaisedButton(
               onPressed: () => showInAppBrowser(context),
-              child: Text('Open InApp Browser'),
+              child: const Text('Open InApp Browser'),
             ),
           ],
         ),

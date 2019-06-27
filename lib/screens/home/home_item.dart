@@ -6,5 +6,5 @@ class HomeItem {
 
   HomeItem([this.name, this.builder]);
 
-  bool get isHeader => (builder == null);
+  bool get isHeader => builder == null;
 }

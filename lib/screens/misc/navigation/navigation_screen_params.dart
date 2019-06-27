@@ -4,7 +4,7 @@ import 'package:flutter_library/screens/misc/navigation/navigation_screen_alone.
 class NavigationScreenParams extends StatelessWidget {
   final String value;
 
-  NavigationScreenParams(this.value);
+  const NavigationScreenParams(this.value);
 
   static MaterialPageRoute<T> instance<T>(String value) {
     return MaterialPageRoute(
@@ -21,7 +21,7 @@ class NavigationScreenParams extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text(this.value),
+          title: Text(value),
         ),
         body: Center(
           child: Column(
@@ -29,11 +29,11 @@ class NavigationScreenParams extends StatelessWidget {
               RaisedButton(
                 onPressed: () => Navigator.of(context).pushAndRemoveUntil(
                     NavigationScreenAlone.instance(), (route) => false),
-                child: Text('Push and remove all'),
+                child: const Text('Push and remove all'),
               ),
               RaisedButton(
                 onPressed: () => Navigator.of(context).pop('Bye!'),
-                child: Text('Go back'),
+                child: const Text('Go back'),
               ),
             ],
           ),

@@ -48,8 +48,8 @@ class HomeScreen extends StatelessWidget {
     HomeItem('Change Notifier', (context) => ChangeNotifierScreen()),
     HomeItem('Scoped Model', (context) => ScopedModelScreen()),
     HomeItem('Bloc', (context) => BlocScreen()),
-    HomeItem('MVP', (context) => MvpScreen('MVP')),
-    HomeItem('MVP2', (context) => Mvp2Screen('MVP2')),
+    HomeItem('MVP', (context) => const MvpScreen('MVP')),
+    HomeItem('MVP2', (context) => const Mvp2Screen('MVP2')),
 
     // ui
     HomeItem('UI'),
@@ -100,7 +100,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildHomeItem(BuildContext context, int index) {
-    var item = items[index];
+    final item = items[index];
 
     if (item.isHeader) {
       return Container(
@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Environment environment = getIt<Environment>();
+    final environment = getIt<Environment>();
 
     return Scaffold(
       appBar: AppBar(

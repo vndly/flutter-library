@@ -18,7 +18,7 @@ class Mvp2View extends ExtraView<Mvp2Model, Mvp2State> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => state.onIncrementCounter(),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

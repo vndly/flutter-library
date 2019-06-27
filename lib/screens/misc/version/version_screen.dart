@@ -20,7 +20,7 @@ class _VersionScreenState extends State<VersionScreen> {
     initPlatformState();
   }
 
-  void initPlatformState() async {
+  Future initPlatformState() async {
     try {
       platformVersion = await GetVersion.platformVersion;
     } on PlatformException {
@@ -58,7 +58,7 @@ class _VersionScreenState extends State<VersionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Version'),
+        title: const Text('Version'),
       ),
       body: Center(
         child: Column(

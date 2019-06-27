@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/screens/state/mvp/mvp_screen.dart';
 
-class MvpView extends StatelessWidget
-{
+class MvpView extends StatelessWidget {
   final MvpState state;
 
-  MvpView(this.state);
+  const MvpView(this.state);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class MvpView extends StatelessWidget
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: state.event.onIncrementCounter,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

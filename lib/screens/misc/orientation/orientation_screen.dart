@@ -39,7 +39,7 @@ class OrientationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Orientation'),
+        title: const Text('Orientation'),
       ),
       body: OrientationBuilder(
         builder: (context, orientation) {

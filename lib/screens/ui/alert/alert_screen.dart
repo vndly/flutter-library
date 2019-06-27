@@ -5,7 +5,7 @@ class AlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Alert'),
+        title: const Text('Alert'),
       ),
       body: Center(
         child: RaisedButton(
@@ -14,8 +14,8 @@ class AlertScreen extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    title: Text('Title'),
-                    content: Text('Content'),
+                    title: const Text('Title'),
+                    content: const Text('Content'),
                     actions: [
                       FlatButton(
                         child: Text(
@@ -33,7 +33,7 @@ class AlertScreen extends StatelessWidget {
                   );
                 });
           },
-          child: Text('Open alert'),
+          child: const Text('Open alert'),
         ),
       ),
     );

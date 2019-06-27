@@ -5,19 +5,19 @@ import 'package:flutter/material.dart';
 class EncodingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var input = 'http://page.org?foo=the message';
+    const input = 'http://page.org?foo=the message';
 
-    var base64Encoded = base64.encode(utf8.encode(input));
-    var base64Decoded = utf8.decode(base64.decode(base64Encoded));
+    final base64Encoded = base64.encode(utf8.encode(input));
+    final base64Decoded = utf8.decode(base64.decode(base64Encoded));
 
-    var urlEncoded = Uri.encodeFull(input);
-    var urlDecoded = Uri.decodeFull(urlEncoded);
+    final urlEncoded = Uri.encodeFull(input);
+    final urlDecoded = Uri.decodeFull(urlEncoded);
 
-    var sha256Hash = sha256.convert(utf8.encode(input));
+    final sha256Hash = sha256.convert(utf8.encode(input));
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Encoding'),
+        title: const Text('Encoding'),
       ),
       body: Center(
         child: Column(

@@ -5,10 +5,10 @@ class ScopedModelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScopedModel(
-      model: ScopedState(ScopedData(0)),
+      model: ScopedState(const ScopedData(0)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Scoped Model'),
+          title: const Text('Scoped Model'),
         ),
         body: Center(
           child: TextCounter(),
@@ -38,7 +38,7 @@ class ButtonCounter extends StatelessWidget {
       rebuildOnChange: false,
       builder: (context, _, model) => FloatingActionButton(
             onPressed: model.onIncrementCounter,
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
     );
   }
@@ -61,7 +61,7 @@ class ScopedState extends Model {
 class ScopedData {
   final int counter;
 
-  ScopedData(this.counter);
+  const ScopedData(this.counter);
 
   ScopedData increment() => ScopedData(counter + 1);
 }

@@ -13,13 +13,13 @@ class _HttpScreenState extends State<HttpScreen> {
   String _data;
   String _error;
 
-  void _loadContent() async {
+  Future _loadContent() async {
     setState(() {
       _state = Status.loading;
     });
 
-    var getDog = GetDog();
-    var result = await getDog.call();
+    final getDog = GetDog();
+    final result = await getDog.call();
 
     if (result.isSuccessful) {
       setState(() {
@@ -41,14 +41,14 @@ class _HttpScreenState extends State<HttpScreen> {
       case Status.init:
         return Center(
           child: RaisedButton(
-            child: Text('Load'),
+            child: const Text('Load'),
             onPressed: _loadContent,
           ),
         );
 
       case Status.loading:
         return Center(
-          child: CircularProgressIndicator(),
+          child: const CircularProgressIndicator(),
         );
 
       case Status.content:
@@ -67,7 +67,7 @@ class _HttpScreenState extends State<HttpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Image'),
+          title: const Text('Image'),
         ),
         body: _body());
   }
@@ -92,10 +92,10 @@ class GetDog extends ValueHttp<Dog> {
 class Dog {
   final String url;
 
-  Dog(this.url);
+  const Dog(this.url);
 
   static Dog json(String json) {
-    var data = jsonDecode(json);
+    final data = jsonDecode(json);
 
     return Dog(data['message']);
   }

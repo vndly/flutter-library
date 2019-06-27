@@ -14,12 +14,12 @@ class FormScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form'),
+        title: const Text('Form'),
       ),
       body: Form(
         key: _formKey,
         child: Container(
-          padding: EdgeInsets.all(50),
+          padding: const EdgeInsets.all(50),
           child: ListView(
             children: [
               TextFormField(
@@ -34,7 +34,7 @@ class FormScreen extends StatelessWidget {
                 onSaved: (value) {},
               ),
               RaisedButton(
-                child: Text('Submit'),
+                child: const Text('Submit'),
                 onPressed: _onSubmit,
               ),
             ],

@@ -30,7 +30,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dropdown'),
+        title: const Text('Dropdown'),
       ),
       body: Center(
         child: DropdownButton<WeekDay>(

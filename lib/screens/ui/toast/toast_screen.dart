@@ -8,7 +8,7 @@ class ToastScreen extends StatelessWidget {
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIos: 1,
-        backgroundColor: Color(0xff555555),
+        backgroundColor: const Color(0xff555555),
         textColor: Colors.white,
         fontSize: 16);
   }
@@ -17,12 +17,12 @@ class ToastScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Toast'),
+        title: const Text('Toast'),
       ),
       body: Center(
         child: RaisedButton(
           onPressed: () => showToast(context),
-          child: Text('Show toast'),
+          child: const Text('Show toast'),
         ),
       ),
     );

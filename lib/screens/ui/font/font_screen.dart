@@ -13,16 +13,15 @@ class FontScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Font'),
+        title: const Text('Font'),
       ),
       body: Center(
         child: Text(
           'This is some text',
           style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'NotoSerif'
-          ),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'NotoSerif'),
         ),
       ),
     );

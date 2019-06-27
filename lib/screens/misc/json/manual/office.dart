@@ -12,7 +12,7 @@ class Office {
       );
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> map = Map();
+    final Map<String, dynamic> map = {};
 
     if (address != null) {
       map['address'] = address;

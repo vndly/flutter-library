@@ -6,7 +6,7 @@ class TabsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tabs'),
+        title: const Text('Tabs'),
       ),
       body: Center(
         child: Column(
@@ -17,7 +17,7 @@ class TabsScreen extends StatelessWidget {
                       builder: (context) => TabsUpScreen(),
                     ),
                   ),
-              child: Text('Up'),
+              child: const Text('Up'),
             ),
             RaisedButton(
               onPressed: () => Navigator.of(context).push(
@@ -25,7 +25,7 @@ class TabsScreen extends StatelessWidget {
                       builder: (context) => TabsUpScreen(),
                     ),
                   ),
-              child: Text('Down'),
+              child: const Text('Down'),
             ),
           ],
         ),

@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-final bloc = Bloc(ScopedData(0));
+final bloc = Bloc(const ScopedData(0));
 
 class BlocScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Scoped Model'),
+        title: const Text('Scoped Model'),
       ),
       body: Center(
         child: TextCounter(),
@@ -37,7 +37,7 @@ class ButtonCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () => bloc.input.add(null),
-      child: Icon(Icons.add),
+      child: const Icon(Icons.add),
     );
   }
 }
@@ -45,8 +45,8 @@ class ButtonCounter extends StatelessWidget {
 class Bloc {
   ScopedData _data;
 
-  final _input = StreamController<Null>();
-  Sink<Null> get input => _input.sink;
+  final _input = StreamController<void>();
+  Sink<void> get input => _input.sink;
 
   final _output = StreamController<int>();
   Stream<int> get ouput => _output.stream;
@@ -67,7 +67,7 @@ class Bloc {
 class ScopedData {
   final int counter;
 
-  ScopedData(this.counter);
+  const ScopedData(this.counter);
 
   ScopedData increment() => ScopedData(counter + 1);
 }

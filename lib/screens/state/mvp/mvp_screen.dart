@@ -4,10 +4,10 @@ import 'package:flutter_library/screens/state/mvp/mvp_view.dart';
 class MvpScreen extends StatefulWidget {
   final String title;
 
-  MvpScreen(this.title);
+  const MvpScreen(this.title);
 
   @override
-  MvpEvents createState() => MvpEvents(MvpModel(this.title, 0));
+  MvpEvents createState() => MvpEvents(MvpModel(title, 0));
 }
 
 class MvpEvents extends State {
@@ -21,8 +21,7 @@ class MvpEvents extends State {
   Widget build(BuildContext context) => MvpView(MvpState(this, _model));
 }
 
-class MvpState
-{
+class MvpState {
   MvpEvents event;
   MvpModel model;
 
@@ -34,7 +33,7 @@ class MvpModel {
   final String title;
   final int counter;
 
-  MvpModel(this.title, this.counter);
+  const MvpModel(this.title, this.counter);
 
   MvpModel increment() => MvpModel(title, counter + 1);
 }

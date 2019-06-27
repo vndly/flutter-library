@@ -18,14 +18,14 @@ class PageViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pages = [
-      PageItem('Page 1', Colors.red),
-      PageItem('Page 2', Colors.green),
-      PageItem('Page 3', Colors.blue),
+      const PageItem('Page 1', Colors.red),
+      const PageItem('Page 2', Colors.green),
+      const PageItem('Page 3', Colors.blue),
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Page View'),
+        title: const Text('Page View'),
       ),
       body: PageView.builder(
         itemBuilder: (context, position) {
@@ -42,5 +42,5 @@ class PageItem {
   final String title;
   final Color color;
 
-  PageItem(this.title, this.color);
+  const PageItem(this.title, this.color);
 }

@@ -5,7 +5,7 @@ class SheetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sheet'),
+        title: const Text('Sheet'),
       ),
       body: Center(
         child: RaisedButton(
@@ -14,11 +14,11 @@ class SheetScreen extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return Center(
-                    child: Text('This is a sheet'),
+                    child: const Text('This is a sheet'),
                   );
                 });
           },
-          child: Text('Open sheet'),
+          child: const Text('Open sheet'),
         ),
       ),
     );

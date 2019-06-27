@@ -5,7 +5,7 @@ class BackgroundScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Background'),
+        title: const Text('Background'),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -13,11 +13,11 @@ class BackgroundScreen extends StatelessWidget {
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.8), BlendMode.dstATop),
-            image: AssetImage('assets/images/background.jpg'),
+            image: const AssetImage('assets/images/background.jpg'),
           ),
         ),
         child: Center(
-          child: Text('Some Title'),
+          child: const Text('Some Title'),
         ),
       ),
     );

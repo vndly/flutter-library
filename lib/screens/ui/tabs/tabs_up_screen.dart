@@ -7,9 +7,9 @@ class TabsUpScreen extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Tabs up'),
+          title: const Text('Tabs up'),
           bottom: TabBar(
-            tabs: [
+            tabs: const [
               Tab(
                 text: 'Tab 1',
                 icon: Icon(Icons.add_a_photo),
@@ -28,13 +28,13 @@ class TabsUpScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             Center(
-              child: Text('Tab 1 content'),
+              child: const Text('Tab 1 content'),
             ),
             Center(
-              child: Text('Tab 2 content'),
+              child: const Text('Tab 2 content'),
             ),
             Center(
-              child: Text('Tab 3 content'),
+              child: const Text('Tab 3 content'),
             ),
           ],
         ),

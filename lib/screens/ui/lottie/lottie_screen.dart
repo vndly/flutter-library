@@ -6,7 +6,7 @@ class LottieScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lottie'),
+        title: const Text('Lottie'),
       ),
       body: Container(
         color: Colors.white,

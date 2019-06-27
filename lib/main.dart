@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
-              localizationsDelegates: [
-                const CustomLocalizationsDelegate(),
+              localizationsDelegates: const [
+                CustomLocalizationsDelegate(),
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
               ],
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
 class AppState extends ChangeNotifier {
   Locale locale;
 
-  AppState() : locale = Locale('en');
+  AppState() : locale = const Locale('en');
 
   void changeLocale(Locale newLocale) {
     locale = newLocale;

@@ -7,7 +7,7 @@ class WebViewScreen extends StatelessWidget {
     return WebviewScaffold(
       url: 'https://flutter.io',
       appBar: AppBar(
-        title: Text('Web View'),
+        title: const Text('Web View'),
       ),
       withZoom: false,
       withLocalStorage: true,
@@ -15,7 +15,7 @@ class WebViewScreen extends StatelessWidget {
       initialChild: Container(
         color: Colors.white,
         child: Center(
-          child: CircularProgressIndicator(),
+          child: const CircularProgressIndicator(),
         ),
       ),
     );

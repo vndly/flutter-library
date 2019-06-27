@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 class EnumsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var day = dayParser('monday');
-    var month = Month.parse('june');
+    final day = dayParser('monday');
+    final month = Month.parse('june');
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Enums'),
+        title: const Text('Enums'),
       ),
       body: Center(
         child: Column(
@@ -35,7 +35,7 @@ class EnumsScreen extends StatelessWidget {
   }
 
   String prettyPrint(Map<String, dynamic> json) {
-    JsonEncoder encoder = JsonEncoder.withIndent('    ');
+    const encoder = JsonEncoder.withIndent('    ');
 
     return encoder.convert(json);
   }
@@ -48,18 +48,18 @@ Day dayParser(String value, {Day defaultValue}) {
 enum Day { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }
 
 class Month {
-  static const JANUARY = const Month._('JANUARY', 1);
-  static const FEBRUARY = const Month._('FEBRUARY', 2);
-  static const MARCH = const Month._('MARCH', 3);
-  static const APRIL = const Month._('APRIL', 4);
-  static const MAY = const Month._('MAY', 5);
-  static const JUNE = const Month._('JUNE', 6);
-  static const JULY = const Month._('JULY', 7);
-  static const AUGUST = const Month._('AUGUST', 8);
-  static const SEPTEMBER = const Month._('SEPTEMBER', 9);
-  static const OCTOBER = const Month._('OCTOBER', 10);
-  static const NOVEMBER = const Month._('NOVEMBER', 1);
-  static const DECEMBER = const Month._('DECEMBER', 12);
+  static const JANUARY = Month._('JANUARY', 1);
+  static const FEBRUARY = Month._('FEBRUARY', 2);
+  static const MARCH = Month._('MARCH', 3);
+  static const APRIL = Month._('APRIL', 4);
+  static const MAY = Month._('MAY', 5);
+  static const JUNE = Month._('JUNE', 6);
+  static const JULY = Month._('JULY', 7);
+  static const AUGUST = Month._('AUGUST', 8);
+  static const SEPTEMBER = Month._('SEPTEMBER', 9);
+  static const OCTOBER = Month._('OCTOBER', 10);
+  static const NOVEMBER = Month._('NOVEMBER', 1);
+  static const DECEMBER = Month._('DECEMBER', 12);
 
   final String name;
   final int value;

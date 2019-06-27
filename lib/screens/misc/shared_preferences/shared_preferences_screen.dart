@@ -7,19 +7,19 @@ class SharedPreferencesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shared Preferences'),
+        title: const Text('Shared Preferences'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
-              child: Text('Normal'),
+              child: const Text('Normal'),
               onPressed: () => Navigator.of(context)
                   .push(SharedPreferencesNormalScreen.instance()),
             ),
             RaisedButton(
-              child: Text('Encrypted'),
+              child: const Text('Encrypted'),
               onPressed: () => Navigator.of(context)
                   .push(SharedPreferencesSecureScreen.instance()),
             ),

@@ -14,14 +14,14 @@ class CanvasScreenState extends State<CanvasScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Canvas'),
+        title: const Text('Canvas'),
       ),
       body: MatrixGestureDetector(
         shouldRotate: false,
         onMatrixUpdate: (Matrix4 m, Matrix4 tm, Matrix4 sm, Matrix4 rm) {
           setState(() {
-            Matrix4 temp = _matrix * sm;
-            Vector3 scale = Vector3(0, 0, 0);
+            final Matrix4 temp = _matrix * sm;
+            final Vector3 scale = Vector3(0, 0, 0);
             temp.decompose(Vector3(0, 0, 0), Quaternion(0, 0, 0, 0), scale);
 
             if (scale.x >= 1) {
@@ -35,7 +35,7 @@ class CanvasScreenState extends State<CanvasScreen> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            color: Color(0xff000000),
+            color: const Color(0xff000000),
             child: CustomPaint(
               painter: OpenPainter(_matrix),
             ),
@@ -53,13 +53,13 @@ class OpenPainter extends CustomPainter {
   OpenPainter(this._matrix)
       : _paint = Paint()
           ..style = PaintingStyle.fill
-          ..color = Color(0xffff0000)
+          ..color = const Color(0xffff0000)
           ..isAntiAlias = true;
 
   @override
   void paint(Canvas canvas, Size size) {
-    var center = size.center(Offset.zero);
-    var radius = size.width / 8;
+    final center = size.center(Offset.zero);
+    final radius = size.width / 8;
 
     canvas.transform(_matrix.storage);
 
@@ -83,15 +83,15 @@ class OpenPainter extends CustomPainter {
 
   @override
   bool hitTest(Offset position) {
-    var point = offsetTransformed(_matrix, position);
+    final point = offsetTransformed(_matrix, position);
     print('hit: $point');
 
     return false;
   }
 
   Offset offsetTransformed(Matrix4 transform, Offset point) {
-    var inverse = Matrix4.tryInvert(transform);
-    
+    final inverse = Matrix4.tryInvert(transform);
+
     if (inverse == null) {
       return point;
     } else {

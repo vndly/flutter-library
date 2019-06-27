@@ -6,7 +6,7 @@ class EventScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Event'),
+        title: const Text('Event'),
       ),
       body: Center(
         child: TextCounter(),
@@ -25,7 +25,7 @@ class _TextCounterState extends State<TextCounter> {
   DateTime dateTime;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     SampleEvent.register((event) => setState(() => dateTime = event.dateTime));
   }
@@ -43,7 +43,7 @@ class ButtonCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () => SampleEvent.post(DateTime.now()),
-      child: Icon(Icons.add),
+      child: const Icon(Icons.add),
     );
   }
 }
@@ -55,12 +55,12 @@ class SampleEvent implements Event {
 
   SampleEvent(this.dateTime);
 
-  static register(void onData(SampleEvent event)) {
+  static void register(void onData(SampleEvent event)) {
     bus.registerTo<SampleEvent>(true).listen(onData);
   }
 
-  static post(DateTime dateTime) {
-    var event = SampleEvent(dateTime);
+  static void post(DateTime dateTime) {
+    final event = SampleEvent(dateTime);
     bus.fire(event);
   }
 }

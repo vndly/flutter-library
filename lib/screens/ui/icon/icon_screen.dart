@@ -6,7 +6,7 @@ class IconScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Background'),
+        title: const Text('Background'),
       ),
       body: Center(
         child: Column(

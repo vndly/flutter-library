@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class DatesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
+    final now = DateTime.now();
     MaterialLocalizations.of(context).backButtonTooltip;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dates'),
+        title: const Text('Dates'),
       ),
       body: Center(
         child: Column(

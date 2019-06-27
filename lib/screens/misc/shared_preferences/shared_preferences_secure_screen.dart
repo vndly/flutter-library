@@ -23,15 +23,15 @@ class _SharedPreferencesSecureScreenState
     loadCounter();
   }
 
-  void loadCounter() async {
-    var preferences = FlutterSecureStorage();
+  Future loadCounter() async {
+    final preferences = FlutterSecureStorage();
     _counter = int.parse(await preferences.read(key: 'counter')) ?? 0;
 
     setState(() {});
   }
 
-  void saveCounter(int counter) async {
-    var preferences = FlutterSecureStorage();
+  Future saveCounter(int counter) async {
+    final preferences = FlutterSecureStorage();
     preferences.write(key: 'counter', value: counter.toString());
   }
 
@@ -46,13 +46,13 @@ class _SharedPreferencesSecureScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shared Preferences Normal'),
+        title: const Text('Shared Preferences Normal'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -64,7 +64,7 @@ class _SharedPreferencesSecureScreenState
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

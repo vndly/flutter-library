@@ -6,7 +6,7 @@ import 'package:flutter_library/screens/state/mvp2/mvp2_view.dart';
 class Mvp2Screen extends StatefulWidget {
   final String title;
 
-  Mvp2Screen(this.title);
+  const Mvp2Screen(this.title);
 
   @override
   State<StatefulWidget> createState() =>

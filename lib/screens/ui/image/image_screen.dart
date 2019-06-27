@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 class ImageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    int index = Random().nextInt(100);
+    final index = Random().nextInt(100);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image'),
+        title: const Text('Image'),
       ),
       body: Center(
         child: ClipRRect(

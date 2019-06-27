@@ -9,7 +9,7 @@ class DialogScreen extends StatelessWidget {
   }
 
   Widget createDialog(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
 
     return SimpleDialog(
       contentPadding: EdgeInsets.zero,
@@ -33,14 +33,14 @@ class DialogScreen extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Text(
                 'Dog text',
                 style: theme.textTheme.body1,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Align(
@@ -69,12 +69,12 @@ class DialogScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dialog'),
+        title: const Text('Dialog'),
       ),
       body: Center(
         child: RaisedButton(
           onPressed: () => openDialog(context),
-          child: Text('Show dialog'),
+          child: const Text('Show dialog'),
         ),
       ),
     );

@@ -11,12 +11,12 @@ class NavigationScreenReplaced extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Replaced'),
+        title: const Text('Replaced'),
       ),
       body: Center(
         child: RaisedButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: Text('Go back'),
+          child: const Text('Go back'),
         ),
       ),
     );

@@ -6,7 +6,7 @@ class RichTextScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image'),
+        title: const Text('Image'),
       ),
       body: Center(
         child: RichText(
@@ -16,7 +16,7 @@ class RichTextScreen extends StatelessWidget {
               color: Colors.black,
             ),
             children: [
-              TextSpan(
+              const TextSpan(
                 text: 'You can find more information ',
               ),
               TextSpan(

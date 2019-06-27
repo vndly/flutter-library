@@ -23,15 +23,15 @@ class _SharedPreferencesNormalScreenState
     loadCounter();
   }
 
-  void loadCounter() async {
-    var preferences = await SharedPreferences.getInstance();
+  Future loadCounter() async {
+    final preferences = await SharedPreferences.getInstance();
     _counter = preferences.getInt('counter') ?? 0;
 
     setState(() {});
   }
 
-  void saveCounter(int counter) async {
-    var preferences = await SharedPreferences.getInstance();
+  Future saveCounter(int counter) async {
+    final preferences = await SharedPreferences.getInstance();
     preferences.setInt('counter', counter);
   }
 
@@ -46,13 +46,13 @@ class _SharedPreferencesNormalScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shared Preferences Normal'),
+        title: const Text('Shared Preferences Normal'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -64,7 +64,7 @@ class _SharedPreferencesNormalScreenState
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

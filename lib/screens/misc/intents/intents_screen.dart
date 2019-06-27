@@ -9,7 +9,7 @@ class IntentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Intents'),
+        title: const Text('Intents'),
       ),
       body: Center(
         child: Column(
@@ -17,35 +17,35 @@ class IntentsScreen extends StatelessWidget {
           children: [
             RaisedButton(
               onPressed: _onShareLink,
-              child: Text('Share link'),
+              child: const Text('Share link'),
             ),
             RaisedButton(
               onPressed: _onOpenWebPage,
-              child: Text('Open webpage'),
+              child: const Text('Open webpage'),
             ),
             RaisedButton(
               onPressed: _onSendEmail,
-              child: Text('Send email'),
+              child: const Text('Send email'),
             ),
             RaisedButton(
               onPressed: _onCallNumner,
-              child: Text('Call number'),
+              child: const Text('Call number'),
             ),
             RaisedButton(
               onPressed: _onOpenAddress,
-              child: Text('Open address'),
+              child: const Text('Open address'),
             ),
             RaisedButton(
               onPressed: _onOpenPlayStore,
-              child: Text('Open Play Store'),
+              child: const Text('Open Play Store'),
             ),
             RaisedButton(
               onPressed: _onTakePicture,
-              child: Text('Take picture'),
+              child: const Text('Take picture'),
             ),
             RaisedButton(
               onPressed: _onSelectFile,
-              child: Text('Select file'),
+              child: const Text('Select file'),
             ),
           ],
         ),
@@ -57,39 +57,39 @@ class IntentsScreen extends StatelessWidget {
     Share.share('Check out my website https://example.com');
   }
 
-  void _onOpenWebPage() async {
+  Future _onOpenWebPage() async {
     _tryLaunch('https://flutter.io');
   }
 
-  void _onSendEmail() async {
+  Future _onSendEmail() async {
     _tryLaunch(
         'mailto:jonh.doe@email.org?subject=The%20subject&body=The%20content');
   }
 
-  void _onCallNumner() async {
+  Future _onCallNumner() async {
     _tryLaunch('tel:+41 79 123 45 67');
   }
 
-  void _onOpenAddress() async {
+  Future _onOpenAddress() async {
     //_tryLaunch('geo:46.2050579,6.1265361?q=46.2050579,6.1265361');
     _tryLaunch('geo:0,0?q=Geneva');
   }
 
-  void _onOpenPlayStore() async {
+  Future _onOpenPlayStore() async {
     _tryLaunch('market://details?id=io.flutter.demo.gallery');
   }
 
-  void _onTakePicture() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+  Future _onTakePicture() async {
+    final image = await ImagePicker.pickImage(source: ImageSource.camera);
     OpenFile.open(image.path);
   }
 
-  void _onSelectFile() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+  Future _onSelectFile() async {
+    final image = await ImagePicker.pickImage(source: ImageSource.gallery);
     OpenFile.open(image.path);
   }
 
-  void _tryLaunch(String url) async {
+  Future _tryLaunch(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {

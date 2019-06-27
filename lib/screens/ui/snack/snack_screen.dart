@@ -4,7 +4,7 @@ class SnackScreen extends StatelessWidget {
   void showSnack(BuildContext context) {
     Scaffold.of(context).showSnackBar(
       SnackBar(
-        content: Text('This is a snack message'),
+        content: const Text('This is a snack message'),
       ),
     );
   }
@@ -13,13 +13,13 @@ class SnackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Snack'),
+        title: const Text('Snack'),
       ),
       body: Builder(
         builder: (context) => Center(
               child: RaisedButton(
                 onPressed: () => showSnack(context),
-                child: Text('Show snack'),
+                child: const Text('Show snack'),
               ),
             ),
       ),

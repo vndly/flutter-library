@@ -6,11 +6,11 @@ import 'package:provider/provider.dart';
 class LocalizationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    AppState state = Provider.of<AppState>(context);
+    final state = Provider.of<AppState>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Localization'),
+        title: const Text('Localization'),
       ),
       body: Center(
         child: Column(
@@ -19,12 +19,12 @@ class LocalizationScreen extends StatelessWidget {
             Text(Localized.get.title),
             Text(Localized.get.message('Yo!')),
             RaisedButton(
-              child: Text('English'),
-              onPressed: () => state.changeLocale(Locale('en')),
+              child: const Text('English'),
+              onPressed: () => state.changeLocale(const Locale('en')),
             ),
             RaisedButton(
-              child: Text('Spanish'),
-              onPressed: () => state.changeLocale(Locale('es')),
+              child: const Text('Spanish'),
+              onPressed: () => state.changeLocale(const Locale('es')),
             ),
           ],
         ),
