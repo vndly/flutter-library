@@ -9,6 +9,7 @@ import 'package:flutter_library/screens/misc/event/event_screen.dart';
 import 'package:flutter_library/screens/misc/http/http_screen.dart';
 import 'package:flutter_library/screens/misc/intents/intents_screen.dart';
 import 'package:flutter_library/screens/misc/json/json_screen.dart';
+import 'package:flutter_library/screens/misc/lifecycle/lifecycle_screen.dart';
 import 'package:flutter_library/screens/misc/localization/localization_screen.dart';
 import 'package:flutter_library/screens/misc/media/media_screen.dart';
 import 'package:flutter_library/screens/misc/navigation/navigation_screen.dart';
@@ -76,6 +77,7 @@ class HomeScreen extends StatelessWidget {
 
     // misc
     HomeItem('Misc'),
+    HomeItem('Lifecycle', (context) => LifecycleScreen()),
     HomeItem('Version', (context) => VersionScreen()),
     HomeItem('Encoding', (context) => EncodingScreen()),
     HomeItem('Intents', (context) => IntentsScreen()),
@@ -92,7 +94,6 @@ class HomeScreen extends StatelessWidget {
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
-    print(item.name);
     Navigator.push(
       context,
       MaterialPageRoute(builder: item.builder),
