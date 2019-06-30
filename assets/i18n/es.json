@@ -1,4 +1,4 @@
 {
     "title": "El titulazo",
-    "message": "El mesajazo: ${value}"
+    "message": "El mesajazo: %1$s"
 }

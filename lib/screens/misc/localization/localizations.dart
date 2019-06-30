@@ -2,57 +2,56 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class BaseLocalized {
-
   String get title;
 
-  String message(Object value);
+  String message(String param1);
 }
 
 class ENLocalized extends BaseLocalized {
-
   @override
   String get title => 'Da title';
 
   @override
-  String message(Object value) => 'Da message: ${value.toString()}';
+  String message(String param1) => 'Da message: ${param1.toString()}';
 }
 
 class ESLocalized extends BaseLocalized {
-
   @override
   String get title => 'El titulazo';
 
   @override
-  String message(Object value) => 'El mesajazo: ${value.toString()}';
+  String message(String param1) => 'El mesajazo: ${param1.toString()}';
 }
 
 class Localized {
   static BaseLocalized get;
 
-  static List<Locale> locales = localized.keys.map((l) => Locale(l)).toList();
+  static List<Locale> locales =
+      localized.keys.map((String l) => Locale(l)).toList();
 
-  static Map<String, BaseLocalized> localized = {
+  static Map<String, BaseLocalized> localized = <String, BaseLocalized>{
     'en': ENLocalized(),
     'es': ESLocalized()
   };
+
+  static bool isSupported(Locale locale) =>
+      locales.map((Locale l) => l.languageCode).contains(locale.languageCode);
 
   static void load(Locale locale) {
     get = localized[locale.languageCode];
   }
 }
 
-class CustomLocalizationsDelegate extends LocalizationsDelegate {
+class CustomLocalizationsDelegate extends LocalizationsDelegate<dynamic> {
   const CustomLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => Localized.locales
-      .map((l) => l.languageCode)
-      .contains(locale.languageCode);
+  bool isSupported(Locale locale) => Localized.isSupported(locale);
 
   @override
-  Future load(Locale locale) {
+  Future<dynamic> load(Locale locale) {
     Localized.load(locale);
-    return SynchronousFuture(Object());
+    return SynchronousFuture<dynamic>(Object());
   }
 
   @override

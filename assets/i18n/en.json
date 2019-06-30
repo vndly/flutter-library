@@ -1,4 +1,4 @@
 {
     "title": "Da title",
-    "message": "Da message: ${value}"
+    "message": "Da message: %1$s"
 }

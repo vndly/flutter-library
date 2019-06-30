@@ -9,6 +9,9 @@ TODO:
 * Unit tests
 * End-to-End tests
 
+* Date and time picker
+https://api.flutter.dev/flutter/material/showDatePicker.html
+
 * Firebase:
 https://firebase.google.com/docs/flutter/setup
 https://github.com/flutter/plugins/blob/master/FlutterFire.md
@@ -24,6 +27,7 @@ https://github.com/nisrulz/flutter-examples/tree/master/infinite_list
 https://github.com/fluttercommunity/flutter_infinite_listview
 
 * Scroll to refresh:
+https://api.flutter.dev/flutter/material/RefreshIndicator-class.html
 https://medium.com/flutterpub/adding-swipe-to-refresh-to-flutter-app-b234534f39a7
 
 * Sticky Header:
@@ -48,6 +52,9 @@ https://github.com/leocavalcante/page_view_indicator
 * Build:
 https://flutter.dev/docs/deployment/android
 https://codemagic.io
+
+* InApp Purchases:
+https://www.youtube.com/watch?v=NWbkKH-2xcQ
 
 Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible
