@@ -65,8 +65,8 @@ class _VersionScreenState extends State<VersionScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(platformVersion),
-            Text(projectVersion),
-            Text(projectCode),
+            Text('Version name: $projectVersion'),
+            Text('Version code: $projectCode'),
             Text(projectAppID),
             Text(projectName),
           ],

@@ -24,31 +24,56 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
-android {
+android
+{
     compileSdkVersion 28
 
-    lintOptions {
+    lintOptions
+    {
         disable 'InvalidPackage'
     }
 
-    defaultConfig {
-        applicationId "com.example.flutter_library"
+    defaultConfig
+    {
+        applicationId 'com.example.flutter_library'
         minSdkVersion 18
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
-    buildTypes {
-        release {
+    flavorDimensions 'app'
+
+    productFlavors
+    {
+ 
+        dev
+        {
+            dimension 'app'
+            applicationId 'com.example.flutter_library.dev'
+        }
+ 
+        prod
+        {
+            dimension "app"
+            applicationId 'com.example.flutter_library.prod'
+        }
+    }
+
+    buildTypes
+    {
+        release
+        {
             signingConfig signingConfigs.debug
         }
     }
 }
 
-flutter {
+flutter
+{
     source '../..'
 }
 
-dependencies {
+dependencies
+{
 }
