@@ -33,8 +33,8 @@ dependencies:
   url_launcher: ^5.0.3
   crypto: ^2.0.6
   http: ^0.12.0+2
-  dafluta: ^1.4.2
-  dahttp: ^1.4.0
+  dafluta: ^1.4.3
+  dahttp: ^1.4.1
 
 dev_dependencies:
 

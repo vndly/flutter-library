@@ -34,6 +34,7 @@ import 'package:flutter_library/screens/ui/icon/icon_screen.dart';
 import 'package:flutter_library/screens/ui/image/image_screen.dart';
 import 'package:flutter_library/screens/ui/lottie/lottie_screen.dart';
 import 'package:flutter_library/screens/ui/page_view/page_view_screen.dart';
+import 'package:flutter_library/screens/ui/refresh/refresh_screen.dart';
 import 'package:flutter_library/screens/ui/rich_text/rich_text_screen.dart';
 import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
@@ -44,16 +45,9 @@ import 'package:flutter_library/screens/ui/web/web_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
-    // state
-    HomeItem('State'),
-    HomeItem('Change Notifier', (context) => ChangeNotifierScreen()),
-    HomeItem('Scoped Model', (context) => ScopedModelScreen()),
-    HomeItem('Bloc', (context) => BlocScreen()),
-    HomeItem('MVP', (context) => const MvpScreen('MVP')),
-    HomeItem('MVP2', (context) => const Mvp2Screen('MVP2')),
-
     // ui
     HomeItem('UI'),
+    HomeItem('Refresh', (context) => RefreshScreen()),
     HomeItem('Dropdown', (context) => DropdownScreen()),
     HomeItem('Lottie', (context) => LottieScreen()),
     HomeItem('Web', (context) => WebScreen()),
@@ -91,6 +85,14 @@ class HomeScreen extends StatelessWidget {
     HomeItem('Media', (context) => MediaScreen()),
     HomeItem('Navigation', (context) => NavigationScreen()),
     HomeItem('Orientation', (context) => OrientationScreen()),
+
+    // state
+    HomeItem('State'),
+    HomeItem('Change Notifier', (context) => ChangeNotifierScreen()),
+    HomeItem('Scoped Model', (context) => ScopedModelScreen()),
+    HomeItem('Bloc', (context) => BlocScreen()),
+    HomeItem('MVP', (context) => const MvpScreen('MVP')),
+    HomeItem('MVP2', (context) => const Mvp2Screen('MVP2')),
   ];
 
   void _onItemSelected(BuildContext context, HomeItem item) {
@@ -107,18 +109,19 @@ class HomeScreen extends StatelessWidget {
       return Container(
         color: Colors.grey,
         padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.all(0),
         child: Text(
           item.name,
           style: TextStyle(color: Colors.white),
         ),
       );
     } else {
-      return InkWell(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Text(
-            item.name,
-            style: TextStyle(color: Colors.black),
+      return ListTile(
+        title: Text(
+          item.name,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 14,
           ),
         ),
         onTap: () => _onItemSelected(context, item),
@@ -135,7 +138,10 @@ class HomeScreen extends StatelessWidget {
         title: Text('Flutter Library : ${environment.name}'),
       ),
       body: ListView.separated(
-        separatorBuilder: (context, index) => Divider(),
+        separatorBuilder: (context, index) => Container(
+              height: 0.5,
+              color: Colors.grey[300],
+            ),
         itemBuilder: _buildHomeItem,
         itemCount: items.length,
       ),

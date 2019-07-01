@@ -140,14 +140,14 @@ packages:
       name: dafluta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.2"
+    version: "1.4.3"
   dahttp:
     dependency: "direct main"
     description:
       name: dahttp
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "1.4.1"
   dalocale:
     dependency: "direct dev"
     description:

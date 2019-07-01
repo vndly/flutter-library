@@ -1,14 +1,6 @@
 # Flutter library
 
 TODO:
-* Mock server
-    - https://pub.dev/packages/mock_web_server
-    - https://pub.dev/packages/jaguar
-
-* Improve RichText creation
-* Unit tests
-* End-to-End tests
-
 * Date and time picker
 https://api.flutter.dev/flutter/material/showDatePicker.html
 
@@ -26,10 +18,6 @@ https://medium.com/flutter-community/flutter-ready-to-go-e59873f9d7de
 https://github.com/nisrulz/flutter-examples/tree/master/infinite_list
 https://github.com/fluttercommunity/flutter_infinite_listview
 
-* Scroll to refresh:
-https://api.flutter.dev/flutter/material/RefreshIndicator-class.html
-https://medium.com/flutterpub/adding-swipe-to-refresh-to-flutter-app-b234534f39a7
-
 * Sticky Header:
 https://github.com/letsar/flutter_sticky_header
 https://github.com/fluttercommunity/flutter_sticky_headers
@@ -40,21 +28,19 @@ https://github.com/letsar/flutter_slidable
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
 
-* Photo view:
-https://github.com/renancaraujo/photo_view
-
-* Floatting button:
-https://github.com/tiagojencmartins/unicornspeeddial
-
-* Page view indicator:
-https://github.com/leocavalcante/page_view_indicator
-
 * Build:
 https://flutter.dev/docs/deployment/android
 https://codemagic.io
 
+* Mock server
+https://pub.dev/packages/mock_web_server
+https://pub.dev/packages/jaguar
+
 * InApp Purchases:
 https://www.youtube.com/watch?v=NWbkKH-2xcQ
+
+* Testing:
+https://medium.com/flutter-community/testing-flutter-ui-with-flutter-driver-c1583681e337
 
 Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible
