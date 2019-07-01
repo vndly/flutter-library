@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/screens/app/flavor_banner.dart';
 import 'package:flutter_library/screens/home/home_screen.dart';
 import 'package:flutter_library/screens/misc/localization/localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -21,15 +22,8 @@ class FlutterLibrary extends StatelessWidget {
                   textTheme: ButtonTextTheme.primary,
                 ),
               ),
-              home: Stack(
-                fit: StackFit.expand,
-                children: [
-                  HomeScreen(),
-                  Banner(
-                    message: 'Custom',
-                    location: BannerLocation.topEnd,
-                  ),
-                ],
+              home: FlavorBanner(
+                child: HomeScreen(),
               ),
               localizationsDelegates: const [
                 CustomLocalizationsDelegate(),

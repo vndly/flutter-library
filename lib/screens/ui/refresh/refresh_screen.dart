@@ -23,9 +23,11 @@ class _RefreshScreenState extends State<RefreshScreen> {
     final List<String> items = await Future.delayed(Duration(seconds: 3),
         () => List<String>.generate(20, (index) => 'Item $index'));
 
-    setState(() {
-      _items = items;
-    });
+    if (mounted) {
+      setState(() {
+        _items = items;
+      });
+    }
   }
 
   @override
