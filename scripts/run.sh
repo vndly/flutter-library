@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-flutter run --flavor dev
+FLAVOR="dev"
+
+flutter run -t lib/main_${FLAVOR}.dart --flavor ${FLAVOR}

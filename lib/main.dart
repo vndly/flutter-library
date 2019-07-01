@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/locator.dart';
+import 'package:flutter_library/resources/locator.dart';
 import 'package:flutter_library/screens/home/home_screen.dart';
 import 'package:flutter_library/screens/misc/localization/localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

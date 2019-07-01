@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/environments.dart';
-import 'package:flutter_library/locator.dart';
+import 'package:flutter_library/resources/environments.dart';
+import 'package:flutter_library/resources/locator.dart';
 import 'package:flutter_library/screens/home/home_item.dart';
 import 'package:flutter_library/screens/misc/dates/dates_screen.dart';
 import 'package:flutter_library/screens/misc/encoding/encoding_screen.dart';
