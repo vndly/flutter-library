@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/resources/locator.dart';
 import 'package:flutter_library/screens/home/home_screen.dart';
 import 'package:flutter_library/screens/misc/localization/localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  setupLocatorDev();
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class FlutterLibrary extends StatelessWidget {
   final AppState state = AppState();
 
   @override

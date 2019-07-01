@@ -46,7 +46,6 @@ android
 
     productFlavors
     {
- 
         dev
         {
             dimension 'app'
@@ -55,7 +54,7 @@ android
  
         prod
         {
-            dimension "app"
+            dimension 'app'
             applicationId 'com.example.flutter_library.prod'
         }
     }

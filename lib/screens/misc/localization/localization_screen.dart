@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_library/main.dart';
+import 'package:flutter_library/screens/app/flutter_library.dart';
 import 'package:flutter_library/screens/misc/localization/localizations.dart';
 import 'package:provider/provider.dart';
 

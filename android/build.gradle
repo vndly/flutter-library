@@ -1,16 +1,21 @@
-buildscript {
-    repositories {
+buildscript
+{
+    repositories
+    {
         google()
         jcenter()
     }
 
-    dependencies {
+    dependencies
+    {
         classpath 'com.android.tools.build:gradle:3.2.1'
     }
 }
 
-allprojects {
-    repositories {
+allprojects
+{
+    repositories
+    {
         google()
         jcenter()
     }
@@ -18,22 +23,26 @@ allprojects {
 
 rootProject.buildDir = '../build'
 
-subprojects {
+subprojects
+{
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 
-subprojects {
+subprojects
+{
     project.evaluationDependsOn(':app')
 }
 
-subprojects {
-    project.configurations.all {
-	resolutionStrategy.eachDependency { details ->
+subprojects
+{
+    project.configurations.all
+    {
+	    resolutionStrategy.eachDependency { details ->
             if (details.requested.group == 'androidx.core' &&
-	       !details.requested.name.contains('androidx')) {
-		details.useVersion "1.0.1"
+	            !details.requested.name.contains('androidx')) {
+		        details.useVersion '1.0.1'
             }
-	}
+	    }
     }    
 }
 
