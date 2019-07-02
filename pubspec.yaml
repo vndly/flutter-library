@@ -42,10 +42,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_driver:
+    sdk: flutter
+
   build_runner: ^1.6.0
   json_serializable: ^3.0.0
   flutter_launcher_icons: ^0.7.2
   dalocale: ^1.5.0
+  flutter_gherkin: ^1.0.4
 
 flutter_icons:
   android: true
