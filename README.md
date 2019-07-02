@@ -35,7 +35,10 @@ https://pub.dev/packages/jaguar
 https://www.youtube.com/watch?v=NWbkKH-2xcQ
 
 * Testing:
+https://flutter.dev/docs/cookbook/testing/integration/introduction
 https://medium.com/flutter-community/testing-flutter-ui-with-flutter-driver-c1583681e337
+https://medium.com/flutter-community/testing-gestures-using-flutter-driver-b37981c24366
+https://medium.com/flutter-community/key-learnings-from-flutter-driver-d1d35ad1402e
 
 Guidelines:
 * Use integers instead floats in paddins, margins, etc when possible

@@ -18,22 +18,21 @@ void main() {
       }
     });
 
-    test('Flutter drive methods demo', () async {
-      await driver.tap(find.byValueKey('inputKeyString'));
-      await driver.enterText('Hello !');
-      await takeScreenshot(driver, 'screenshots/entered_text.png');
+    test('Flutter drive demo', () async {
+      await driver.tap(find.text('Refresh'));
+      await takeScreenshot(driver, 'screenshots/refresh.png');
+      await driver.tap(find.byValueKey('button.back'));
+
+      /*await driver.enterText('Hello !');
       await driver.waitFor(find.text('Hello !'));
       await driver.enterText('World');
       await takeScreenshot(driver, 'screenshots/new_text.png');
       await driver.waitForAbsent(find.text('Hello !'));
-      print('World');
       await driver.waitFor(find.byValueKey('button'));
       await driver.tap(find.byValueKey('button'));
-      print('Button clicked');
       await driver.waitFor(find.byValueKey('text'));
       await driver.scrollIntoView(find.byValueKey('text'));
-      await driver.waitFor(find.text('Scroll till here'));
-      print('I found you buddy !');
+      await driver.waitFor(find.text('Scroll till here'));*/
     });
   });
 }
