@@ -22,6 +22,7 @@ https://github.com/letsar/flutter_slidable
 
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
+https://medium.com/flutter-community/in-app-notifications-in-flutter-9c1e92ea10b3
 
 * Build:
 https://flutter.dev/docs/deployment/android
