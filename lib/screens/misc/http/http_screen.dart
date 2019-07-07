@@ -21,14 +21,14 @@ class _HttpScreenState extends State<HttpScreen> {
     final getDog = GetDog();
     final result = await getDog.call();
 
-    if (result.isSuccessful) {
+    if (result.isSuccess) {
       setState(() {
         _data = result.data.url;
         _state = Status.content;
       });
     } else {
       setState(() {
-        _error = result.isUnsuccessful
+        _error = result.isError
             ? result.response.reasonPhrase
             : result.exception.toString();
         _state = Status.error;
