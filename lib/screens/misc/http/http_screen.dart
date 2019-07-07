@@ -75,7 +75,7 @@ class _HttpScreenState extends State<HttpScreen> {
 
 enum Status { init, loading, content, error }
 
-class GetDog extends ValueHttp<Dog> {
+class GetDog extends ValuedHttpClient<Dog> {
   static const String URL = 'https://dog.ceo/api/breeds/image/random';
 
   Future<HttpResult<Dog>> call() {
