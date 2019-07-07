@@ -34,6 +34,7 @@ import 'package:flutter_library/screens/ui/icon/icon_screen.dart';
 import 'package:flutter_library/screens/ui/image/image_screen.dart';
 import 'package:flutter_library/screens/ui/lottie/lottie_screen.dart';
 import 'package:flutter_library/screens/ui/page_view/page_view_screen.dart';
+import 'package:flutter_library/screens/ui/platform/platform_screen.dart';
 import 'package:flutter_library/screens/ui/refresh/refresh_screen.dart';
 import 'package:flutter_library/screens/ui/rich_text/rich_text_screen.dart';
 import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
@@ -48,6 +49,7 @@ class HomeScreen extends StatelessWidget {
     // ui
     HomeItem('UI'),
     HomeItem('Dropdown', (context) => DropdownScreen()),
+    HomeItem('Platform', (context) => PlatformScreen()),
     HomeItem('Refresh', (context) => RefreshScreen()),
     HomeItem('Lottie', (context) => LottieScreen()),
     HomeItem('Web', (context) => WebScreen()),
