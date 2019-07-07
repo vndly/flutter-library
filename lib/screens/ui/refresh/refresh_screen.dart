@@ -35,7 +35,6 @@ class _RefreshScreenState extends State<RefreshScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Refresh'),
-        leading: const BackButton(key: Key('button.back')),
       ),
       body: RefreshIndicator(
         onRefresh: _onLoad,

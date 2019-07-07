@@ -47,8 +47,8 @@ class HomeScreen extends StatelessWidget {
   final List<HomeItem> items = [
     // ui
     HomeItem('UI'),
-    HomeItem('Refresh', (context) => RefreshScreen()),
     HomeItem('Dropdown', (context) => DropdownScreen()),
+    HomeItem('Refresh', (context) => RefreshScreen()),
     HomeItem('Lottie', (context) => LottieScreen()),
     HomeItem('Web', (context) => WebScreen()),
     HomeItem('Toast', (context) => ToastScreen()),

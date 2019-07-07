@@ -1,3 +1,4 @@
+import 'package:dafluta/dafluta.dart';
 import 'package:flutter/material.dart';
 
 class DropdownScreen extends StatefulWidget {
@@ -6,7 +7,7 @@ class DropdownScreen extends StatefulWidget {
 }
 
 class _DropdownScreenState extends State<DropdownScreen> {
-  List<WeekDay> days = [
+  final List<WeekDay> days = [
     WeekDay(1, 'Monday'),
     WeekDay(2, 'Tuesday'),
     WeekDay(3, 'Wednesday'),
@@ -30,13 +31,28 @@ class _DropdownScreenState extends State<DropdownScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dropdown'),
+        title: const Text('Dropdown example'),
+        leading: const BackButton(),
       ),
       body: Center(
-        child: DropdownButton<WeekDay>(
-          value: selectedDay,
-          items: _buildDropdownMenuItems(),
-          onChanged: _changedDropDownItem,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('Select day:'),
+                const HBox(15),
+                DropdownButton<WeekDay>(
+                  value: selectedDay,
+                  items: _buildDropdownMenuItems(),
+                  onChanged: _changedDropDownItem,
+                ),
+              ],
+            ),
+            Text(
+                'Selected: ${(selectedDay != null) ? selectedDay.name : 'None'}')
+          ],
         ),
       ),
     );

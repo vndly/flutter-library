@@ -1,19 +1,21 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_library/resources/locator.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_library/screens/app/flutter_library.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('widget test example', (tester) async {
+  testWidgets('widget test example', (WidgetTester tester) async {
     setupLocatorDev();
+
     await tester.pumpWidget(FlutterLibrary());
 
-    expect(find.text('Refresh'), findsOneWidget);
-    expect(find.text('xxxx'), findsNothing);
+    await tester.tap(find.text('Dropdown'));
+    await tester.pumpAndSettle();
 
-    //await tester.tap(find.text('Refresh'));
-    //await tester.tap(find.byIcon(Icons.arrow_back));
-    //await tester.tap(find.byKey(const Key('button.back')));
+    expect(find.text('Dropdown example'), findsOneWidget);
+    await tester.tap(find.byIcon(Icons.arrow_back));
+    await tester.pumpAndSettle();
 
-    await tester.pump();
-  }, skip: true);
+    await tester.tap(find.text('Dropdown'));
+  });
 }
