@@ -10,11 +10,6 @@ https://codelabs.developers.google.com/codelabs/flutter-firebase
 https://github.com/nisrulz/flutter-examples/tree/master/infinite_list
 https://github.com/fluttercommunity/flutter_infinite_listview
 
-* Sticky Header:
-https://github.com/letsar/flutter_sticky_header
-https://github.com/fluttercommunity/flutter_sticky_headers
-https://medium.com/flutter-community/custom-sticky-headers-in-flutter-248d3c26863
-
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
 https://medium.com/flutter-community/in-app-notifications-in-flutter-9c1e92ea10b3

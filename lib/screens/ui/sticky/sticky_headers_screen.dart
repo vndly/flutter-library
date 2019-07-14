@@ -4,8 +4,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 class StickyHeadersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final countries = _countries();
-    var lastGroup = '';
+    final countriesMap = _countriesMap();
 
     return Scaffold(
         appBar: AppBar(
@@ -13,17 +12,12 @@ class StickyHeadersScreen extends StatelessWidget {
         ),
         body: ListView.builder(
           itemBuilder: (context, index) {
-            final country = countries[index];
-            final letter = country[0];
+            final key = countriesMap.keys.toList()[index];
+            final countries = countriesMap[key];
 
-            if (lastGroup != letter) {
-              lastGroup = letter;
-              return RowItemWithHeader(country);
-            } else {
-              return RowItem(country);
-            }
+            return ItemsGroup(key, countries);
           },
-          itemCount: countries.length,
+          itemCount: countriesMap.keys.length,
         ));
   }
 
@@ -225,12 +219,32 @@ class StickyHeadersScreen extends StatelessWidget {
         'Zambia',
         'Zimbabwe',
       ];
+
+  Map<String, List<String>> _countriesMap() {
+    final Map<String, List<String>> result = {};
+    final list = _countries();
+    var group = '';
+
+    for (var country in list) {
+      final letter = country[0];
+
+      if (group != letter) {
+        group = letter;
+        result[group] = [];
+      }
+
+      result[group].add(country);
+    }
+
+    return result;
+  }
 }
 
-class RowItemWithHeader extends StatelessWidget {
-  final String country;
+class ItemsGroup extends StatelessWidget {
+  final String header;
+  final List<String> countries;
 
-  const RowItemWithHeader(this.country);
+  const ItemsGroup(this.header, this.countries);
 
   @override
   Widget build(BuildContext context) {
@@ -241,11 +255,13 @@ class RowItemWithHeader extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         alignment: Alignment.centerLeft,
         child: Text(
-          country[0],
+          header,
           style: const TextStyle(color: Colors.white),
         ),
       ),
-      content: RowItem(country),
+      content: Column(
+        children: countries.map((c) => RowItem(c)).toList(),
+      ),
     );
   }
 }
@@ -257,8 +273,11 @@ class RowItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(country),
+    return InkWell(
+      child: ListTile(
+        title: Text(country),
+      ),
+      onTap: () => print(country),
     );
   }
 }
