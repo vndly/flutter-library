@@ -6,7 +6,6 @@ class DateScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Date'),
-        leading: const BackButton(),
       ),
       body: Center(
           child: Column(

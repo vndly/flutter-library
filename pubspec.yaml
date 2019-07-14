@@ -1,9 +1,9 @@
 name: flutter_library
 description: A Flutter library
-version: 1.2.3+2
+version: 1.2.3+4
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.4.0 <3.0.0"
 
 dependencies:
 
@@ -23,6 +23,7 @@ dependencies:
   fluttertoast: ^3.1.0
   flutter_webview_plugin: ^0.3.5
   flutter_inappbrowser: ^1.2.1
+  flutter_slidable: ^0.5.3
   get_version: ^0.1.0
   device_info: ^0.4.0+2
   flutter_lottie: ^0.2.0
@@ -35,7 +36,7 @@ dependencies:
   crypto: ^2.0.6
   http: ^0.12.0+2
   dafluta: ^1.4.3
-  dahttp: ^1.8.0
+  dahttp: ^1.9.3
 
 dev_dependencies:
 

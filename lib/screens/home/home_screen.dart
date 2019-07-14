@@ -38,6 +38,7 @@ import 'package:flutter_library/screens/ui/page_view/page_view_screen.dart';
 import 'package:flutter_library/screens/ui/platform/platform_screen.dart';
 import 'package:flutter_library/screens/ui/refresh/refresh_screen.dart';
 import 'package:flutter_library/screens/ui/rich_text/rich_text_screen.dart';
+import 'package:flutter_library/screens/ui/row_option/row_option_screen.dart';
 import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
 import 'package:flutter_library/screens/ui/snack/snack_screen.dart';
@@ -50,6 +51,7 @@ class HomeScreen extends StatelessWidget {
     // ui
     HomeItem('UI'),
     HomeItem('Dropdown', (context) => DropdownScreen()),
+    HomeItem('Row option', (context) => RowOptionScreen()),
     HomeItem('Date', (context) => DateScreen()),
     HomeItem('Platform', (context) => PlatformScreen()),
     HomeItem('Refresh', (context) => RefreshScreen()),
