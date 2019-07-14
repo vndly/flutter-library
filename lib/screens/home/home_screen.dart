@@ -33,6 +33,7 @@ import 'package:flutter_library/screens/ui/font/font_screen.dart';
 import 'package:flutter_library/screens/ui/form/form_screen.dart';
 import 'package:flutter_library/screens/ui/icon/icon_screen.dart';
 import 'package:flutter_library/screens/ui/image/image_screen.dart';
+import 'package:flutter_library/screens/ui/infinite_scroll/infinite_scroll_screen_1.dart';
 import 'package:flutter_library/screens/ui/lottie/lottie_screen.dart';
 import 'package:flutter_library/screens/ui/page_view/page_view_screen.dart';
 import 'package:flutter_library/screens/ui/platform/platform_screen.dart';
@@ -52,6 +53,7 @@ class HomeScreen extends StatelessWidget {
     // ui
     HomeItem('UI'),
     HomeItem('Dropdown', (context) => DropdownScreen()),
+    HomeItem('Infinite Scroll', (context) => InfiniteScrollScreen1()),
     HomeItem('Row option', (context) => RowOptionScreen()),
     HomeItem('Sticky Headers', (context) => StickyHeadersScreen()),
     HomeItem('Date', (context) => DateScreen()),

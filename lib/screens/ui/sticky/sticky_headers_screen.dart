@@ -7,18 +7,19 @@ class StickyHeadersScreen extends StatelessWidget {
     final countriesMap = _countriesMap();
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Sticky Headers'),
-        ),
-        body: ListView.builder(
-          itemBuilder: (context, index) {
-            final key = countriesMap.keys.toList()[index];
-            final countries = countriesMap[key];
+      appBar: AppBar(
+        title: const Text('Sticky Headers'),
+      ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          final key = countriesMap.keys.toList()[index];
+          final countries = countriesMap[key];
 
-            return ItemsGroup(key, countries);
-          },
-          itemCount: countriesMap.keys.length,
-        ));
+          return ItemsGroup(key, countries);
+        },
+        itemCount: countriesMap.keys.length,
+      ),
+    );
   }
 
   List<String> _countries() => [

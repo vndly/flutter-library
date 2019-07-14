@@ -6,10 +6,6 @@ https://firebase.google.com/docs/flutter/setup
 https://github.com/flutter/plugins/blob/master/FlutterFire.md
 https://codelabs.developers.google.com/codelabs/flutter-firebase
 
-* Infinite Listview:
-https://github.com/nisrulz/flutter-examples/tree/master/infinite_list
-https://github.com/fluttercommunity/flutter_infinite_listview
-
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
 https://medium.com/flutter-community/in-app-notifications-in-flutter-9c1e92ea10b3
@@ -17,12 +13,12 @@ https://medium.com/flutter-community/in-app-notifications-in-flutter-9c1e92ea10b
 * Deep links
 https://medium.com/@denisov.shureg/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 
+* InApp Purchases:
+https://www.youtube.com/watch?v=NWbkKH-2xcQ
+
 * Mock server
 https://pub.dev/packages/mock_web_server
 https://pub.dev/packages/jaguar
-
-* InApp Purchases:
-https://www.youtube.com/watch?v=NWbkKH-2xcQ
 
 * Testing:
 https://flutter.dev/docs/cookbook/testing/integration/introduction
