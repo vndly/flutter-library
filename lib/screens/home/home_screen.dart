@@ -25,6 +25,7 @@ import 'package:flutter_library/screens/ui/alert/alert_screen.dart';
 import 'package:flutter_library/screens/ui/background/background_screen.dart';
 import 'package:flutter_library/screens/ui/bottom_bar/bottom_bar_screen.dart';
 import 'package:flutter_library/screens/ui/canvas/canvas_screen.dart';
+import 'package:flutter_library/screens/ui/date/date_screen.dart';
 import 'package:flutter_library/screens/ui/dialog/dialog_screen.dart';
 import 'package:flutter_library/screens/ui/drawer/drawer_screen.dart';
 import 'package:flutter_library/screens/ui/dropdown/dropdown_screen.dart';
@@ -49,6 +50,7 @@ class HomeScreen extends StatelessWidget {
     // ui
     HomeItem('UI'),
     HomeItem('Dropdown', (context) => DropdownScreen()),
+    HomeItem('Date', (context) => DateScreen()),
     HomeItem('Platform', (context) => PlatformScreen()),
     HomeItem('Refresh', (context) => RefreshScreen()),
     HomeItem('Lottie', (context) => LottieScreen()),
@@ -141,9 +143,9 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) => Container(
-              height: 0.5,
-              color: Colors.grey[300],
-            ),
+          height: 0.5,
+          color: Colors.grey[300],
+        ),
         itemBuilder: _buildHomeItem,
         itemCount: items.length,
       ),

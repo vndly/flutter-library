@@ -1,9 +1,6 @@
 # Flutter library
 
 TODO:
-* Date and time picker
-https://api.flutter.dev/flutter/material/showDatePicker.html
-
 * Firebase:
 https://firebase.google.com/docs/flutter/setup
 https://github.com/flutter/plugins/blob/master/FlutterFire.md
