@@ -16,13 +16,18 @@ https://github.com/fluttercommunity/flutter_infinite_listview
 * Sticky Header:
 https://github.com/letsar/flutter_sticky_header
 https://github.com/fluttercommunity/flutter_sticky_headers
+https://medium.com/flutter-community/custom-sticky-headers-in-flutter-248d3c26863
 
 * Row menu:
 https://github.com/letsar/flutter_slidable
+https://medium.com/flutter-community/flutter-slide-options-for-user-profile-1515d5443d3f
 
 * Notifications:
 https://github.com/MaikuB/flutter_local_notifications
 https://medium.com/flutter-community/in-app-notifications-in-flutter-9c1e92ea10b3
+
+* Deep links
+https://medium.com/@denisov.shureg/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 
 * Build:
 https://flutter.dev/docs/deployment/android
