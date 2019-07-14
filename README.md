@@ -22,10 +22,6 @@ https://medium.com/flutter-community/in-app-notifications-in-flutter-9c1e92ea10b
 * Deep links
 https://medium.com/@denisov.shureg/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 
-* Build:
-https://flutter.dev/docs/deployment/android
-https://codemagic.io
-
 * Mock server
 https://pub.dev/packages/mock_web_server
 https://pub.dev/packages/jaguar

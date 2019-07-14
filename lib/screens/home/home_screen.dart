@@ -42,6 +42,7 @@ import 'package:flutter_library/screens/ui/row_option/row_option_screen.dart';
 import 'package:flutter_library/screens/ui/scroll/scroll_screen.dart';
 import 'package:flutter_library/screens/ui/sheet/sheet_screen.dart';
 import 'package:flutter_library/screens/ui/snack/snack_screen.dart';
+import 'package:flutter_library/screens/ui/sticky/sticky_headers_screen.dart';
 import 'package:flutter_library/screens/ui/tabs/tabs_screen.dart';
 import 'package:flutter_library/screens/ui/toast/toast_screen.dart';
 import 'package:flutter_library/screens/ui/web/web_screen.dart';
@@ -52,6 +53,7 @@ class HomeScreen extends StatelessWidget {
     HomeItem('UI'),
     HomeItem('Dropdown', (context) => DropdownScreen()),
     HomeItem('Row option', (context) => RowOptionScreen()),
+    HomeItem('Sticky Headers', (context) => StickyHeadersScreen()),
     HomeItem('Date', (context) => DateScreen()),
     HomeItem('Platform', (context) => PlatformScreen()),
     HomeItem('Refresh', (context) => RefreshScreen()),
@@ -118,7 +120,7 @@ class HomeScreen extends StatelessWidget {
         margin: const EdgeInsets.all(0),
         child: Text(
           item.name,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       );
     } else {
