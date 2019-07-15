@@ -70,3 +70,35 @@ class WeekDay {
     return name;
   }
 }
+
+class SuperDropdown<T> extends StatefulWidget {
+  final List<T> elements;
+
+  const SuperDropdown(this.elements);
+
+  @override
+  _SuperDropdownState<T> createState() => _SuperDropdownState<T>();
+}
+
+class _SuperDropdownState<T> extends State<SuperDropdown> {
+  T selected;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<T>(
+      value: selected,
+      items: _buildDropdownMenuItems(),
+      onChanged: _changed,
+    );
+  }
+
+  List<DropdownMenuItem<T>> _buildDropdownMenuItems() => widget.elements
+      .map((e) => DropdownMenuItem(value: e, child: Text(e.toString())))
+      .toList();
+
+  void _changed(T element) {
+    setState(() {
+      selected = element;
+    });
+  }
+}
