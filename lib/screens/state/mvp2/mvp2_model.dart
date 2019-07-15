@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-
-@immutable
 class Mvp2Model {
   final String title;
   final int counter;

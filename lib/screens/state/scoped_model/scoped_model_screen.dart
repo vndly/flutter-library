@@ -57,7 +57,6 @@ class ScopedState extends Model {
   }
 }
 
-@immutable
 class ScopedData {
   final int counter;
 

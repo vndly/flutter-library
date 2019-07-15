@@ -2,4 +2,4 @@
 
 FLAVOR="dev"
 
-flutter run -t lib/main_${FLAVOR}.dart --flavor ${FLAVOR}
+flutter run -t lib/main/main_${FLAVOR}.dart --flavor ${FLAVOR}

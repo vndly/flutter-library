@@ -28,7 +28,6 @@ class MvpState {
   MvpState(this.event, this.model);
 }
 
-@immutable
 class MvpModel {
   final String title;
   final int counter;

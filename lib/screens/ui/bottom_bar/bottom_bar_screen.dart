@@ -64,7 +64,6 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   }
 }
 
-@immutable
 class PageItem {
   final String title;
   final Color color;

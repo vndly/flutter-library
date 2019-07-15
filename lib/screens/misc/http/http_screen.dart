@@ -88,7 +88,6 @@ class GetDog extends ValuedHttpClient<Dog> {
   }
 }
 
-@immutable
 class Dog {
   final String url;
 

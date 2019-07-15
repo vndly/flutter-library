@@ -37,7 +37,6 @@ class PageViewScreen extends StatelessWidget {
   }
 }
 
-@immutable
 class PageItem {
   final String title;
   final Color color;

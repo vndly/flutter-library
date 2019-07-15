@@ -69,7 +69,6 @@ class ScopedState extends ChangeNotifier {
   }
 }
 
-@immutable
 class ScopedData {
   final int counter;
 

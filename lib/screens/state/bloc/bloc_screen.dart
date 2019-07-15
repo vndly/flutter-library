@@ -63,7 +63,6 @@ class Bloc {
   }
 }
 
-@immutable
 class ScopedData {
   final int counter;
 
