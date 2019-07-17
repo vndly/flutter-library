@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/screens/ui/web/community_web_view.dart';
 import 'package:flutter_library/screens/ui/web/custom_inappbrowser.dart';
-import 'package:flutter_library/screens/ui/web/webview_screen.dart';
+import 'package:flutter_library/screens/ui/web/official_web_view.dart';
 
 class WebScreen extends StatelessWidget {
-  void showWebview(BuildContext context) {
+  void showOfficialWebview(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => WebViewScreen(),
+        builder: (context) => const OfficialWebView(),
+      ),
+    );
+  }
+
+  void showCommunityWebview(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const CommunityWebView(),
       ),
     );
   }
@@ -27,10 +36,15 @@ class WebScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             RaisedButton(
-              onPressed: () => showWebview(context),
-              child: const Text('Open webview'),
+              onPressed: () => showOfficialWebview(context),
+              child: const Text('Open official webview'),
+            ),
+            RaisedButton(
+              onPressed: () => showCommunityWebview(context),
+              child: const Text('Open community webview'),
             ),
             RaisedButton(
               onPressed: () => showInAppBrowser(context),
