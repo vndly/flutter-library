@@ -5,10 +5,7 @@ TODO:
 https://firebase.google.com/docs/flutter/setup
 https://github.com/flutter/plugins/blob/master/FlutterFire.md
 https://codelabs.developers.google.com/codelabs/flutter-firebase
-
-* Notifications:
-https://github.com/MaikuB/flutter_local_notifications
-https://medium.com/flutter-community/in-app-notifications-in-flutter-9c1e92ea10b3
+https://medium.com/flutterpub/enabling-firebase-cloud-messaging-push-notifications-with-flutter-39b08f2ed723
 
 * Deep links
 https://medium.com/@denisov.shureg/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
@@ -31,7 +28,6 @@ Guidelines:
 * Use single quote instead of double quote
 * Use [] instead of <Widget>[]
 * Use => notation for a single line function
-* Use 'var' when declaring variables in methods
 * Use imports with 'package:...' instead of relative paths
 
 Sanitizer:
