@@ -53,7 +53,7 @@ dev_dependencies:
   build_runner: ^1.6.0
   json_serializable: ^3.0.0
   flutter_launcher_icons: ^0.7.2
-  dalocale: ^1.5.0
+  dalocale: ^1.6.0
   flutter_gherkin: ^1.0.4
 
 flutter_icons:

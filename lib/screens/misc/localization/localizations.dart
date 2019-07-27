@@ -25,6 +25,7 @@ class ESLocalized extends BaseLocalized {
 
 class Localized {
   static BaseLocalized get;
+  static Locale current;
 
   static List<Locale> locales =
       localized.keys.map((String l) => Locale(l)).toList();
@@ -38,6 +39,7 @@ class Localized {
       locales.map((Locale l) => l.languageCode).contains(locale.languageCode);
 
   static void load(Locale locale) {
+    current = locale;
     get = localized[locale.languageCode];
   }
 }
