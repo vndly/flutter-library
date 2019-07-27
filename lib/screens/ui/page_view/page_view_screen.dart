@@ -7,7 +7,7 @@ class PageViewScreen extends StatelessWidget {
       child: Center(
         child: Text(
           page.title,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),

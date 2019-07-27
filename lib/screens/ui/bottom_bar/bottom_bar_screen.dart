@@ -49,7 +49,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       child: Center(
         child: Text(
           page.title,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),

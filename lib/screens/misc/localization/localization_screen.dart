@@ -7,6 +7,7 @@ class LocalizationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = Provider.of<AppState>(context);
+    final locale = Localizations.localeOf(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -16,6 +17,7 @@ class LocalizationScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Text('Locale: $locale'),
             Text(Localized.get.title),
             Text(Localized.get.message('Yo!')),
             RaisedButton(

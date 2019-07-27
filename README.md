@@ -6,9 +6,13 @@ https://firebase.google.com/docs/flutter/setup
 https://github.com/flutter/plugins/blob/master/FlutterFire.md
 https://codelabs.developers.google.com/codelabs/flutter-firebase
 https://medium.com/flutterpub/enabling-firebase-cloud-messaging-push-notifications-with-flutter-39b08f2ed723
+https://medium.com/flutter-community/flutter-implementing-google-sign-in-71888bca24ed
 
 * Deep links
 https://medium.com/@denisov.shureg/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
+
+* Ads
+https://flutterawesome.com/easily-implement-ads-into-a-flutter-app
 
 * InApp Purchases:
 https://www.youtube.com/watch?v=NWbkKH-2xcQ

@@ -120,7 +120,7 @@ class _AppConfigState extends State<AppConfig> {
           const SizedBox(width: 5),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13,
             ),
           )
