@@ -11,11 +11,16 @@ https://medium.com/flutter-community/flutter-implementing-google-sign-in-71888bc
 * Deep links
 https://medium.com/@denisov.shureg/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 
+* Notifications
+https://www.youtube.com/watch?v=xMeCwF5MO6w
+https://www.youtube.com/watch?v=lVDO58jCiCo
+
 * Ads
 https://flutterawesome.com/easily-implement-ads-into-a-flutter-app
 
 * InApp Purchases:
 https://www.youtube.com/watch?v=NWbkKH-2xcQ
+https://android-developers.googleblog.com/2019/06/advanced-in-app-billing-handling.html
 
 * Mock server
 https://pub.dev/packages/mock_web_server
