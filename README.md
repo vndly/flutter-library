@@ -15,9 +15,6 @@ https://medium.com/@denisov.shureg/deep-links-and-flutter-applications-how-to-ha
 https://www.youtube.com/watch?v=xMeCwF5MO6w
 https://www.youtube.com/watch?v=lVDO58jCiCo
 
-* Ads
-https://flutterawesome.com/easily-implement-ads-into-a-flutter-app
-
 * InApp Purchases:
 https://www.youtube.com/watch?v=NWbkKH-2xcQ
 https://android-developers.googleblog.com/2019/06/advanced-in-app-billing-handling.html
@@ -43,3 +40,25 @@ Sanitizer:
 * "
 * new
 * ))
+
+Collection-if:
+
+```dart
+if (condition)
+    Widget(...)
+```
+
+Spread operator
+```dart
+if (condition) ...[
+    Widget1(...),
+    Widget2(...),
+    ...
+]
+```
+
+Condition-for:
+```dart
+for (var item in list)
+    Widget1(...),
+```
